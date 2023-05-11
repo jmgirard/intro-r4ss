@@ -9,22 +9,48 @@ title: "Schedule"
 This is a two-day workshop where each day runs from 10:30am&#8722;3:30pm [EDT](https://time.is/EDT) and is broken into two parts.<br />
 Part A runs from 10:30am&#8722;12:30pm and Part B runs from 1:30am&#8722;3:30pm with an hour for lunch between.
 
-## Day 1
+## Day 1 (June 1, 2023)
 
-10:30am – 3:30pm [EDT](https://time.is/EDT) (June 1, 2023)
+Zoom Link: <https://zoom.us/j/TBA>
+
+### Part 1A: Overview and Basic Programming
 
   -   Overview
-  -   Basic Programming
-  -   Basic Data Wrangling
+  -   R and RStudio
+  -   Console and Math
+  -   Assignment
+  -   Naming
+  -   Functions
+  
+### Part 1B: Basic Programming and Wrangling
+
+  -   Vectors
+  -   Strings
+  -   Packages
+  -   Tidy Data
+  -   Tibbles
+  -   Data Files
+
+
+## Day 2 (June 2, 2023)
 
 Zoom Link: <https://zoom.us/j/TBA>
 
-## Day 2
+### Part 2A: Data Exploration and Analysis
 
-10:30am – 3:30pm [EDT](https://time.is/EDT) (June 2, 2023)
-
-  -   Exploratory Data Analysis
+  -   Factors and NAs
+  -   Data Summary
+  -   Histograms
   -   Correlations
-  -   Linear Modeling
+  -   Comparing Two Groups
+  -   Comparing Many Groups
 
-Zoom Link: <https://zoom.us/j/TBA>
+### Part 2B: General Linear Modeling
+
+  -   Simple Regression
+  -   Multiple Regression
+  -   Categorical Predictors
+  -   Interaction Effects
+  -   Formula Resources
+  -   Regression Diagnostics
+  

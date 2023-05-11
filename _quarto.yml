@@ -15,8 +15,6 @@ website:
             href: ./Details/instructor.qmd
           - text: "Schedule"
             href: ./Details/schedule.qmd
-          - text: "Datasets"
-            href: ./Details/datasets.qmd
       - text: "Day 1"
         menu:
           - text: "Day 1A Materials"

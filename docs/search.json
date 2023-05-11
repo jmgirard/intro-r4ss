@@ -46,14 +46,14 @@
     "href": "Day1/day1B.html#practice",
     "title": "Day 1B",
     "section": "Practice",
-    "text": "Practice"
+    "text": "Practice\n\nA\nB\nC"
   },
   {
     "objectID": "Day1/day1B.html#readings",
     "href": "Day1/day1B.html#readings",
     "title": "Day 1B",
     "section": "Readings",
-    "text": "Readings"
+    "text": "Readings\n\nA\nB\nC"
   },
   {
     "objectID": "Day2/day2A.html",
@@ -102,14 +102,14 @@
     "href": "Day2/day2B.html#practice",
     "title": "Day 2B",
     "section": "Practice",
-    "text": "Practice"
+    "text": "Practice\n\nA\nB\nC"
   },
   {
     "objectID": "Day2/day2B.html#readings",
     "href": "Day2/day2B.html#readings",
     "title": "Day 2B",
     "section": "Readings",
-    "text": "Readings"
+    "text": "Readings\n\nA\nB\nC"
   },
   {
     "objectID": "Details/instructor.html",
@@ -140,18 +140,18 @@
     "text": "This is a two-day workshop where each day runs from 10:30am−3:30pm EDT and is broken into two parts. Part A runs from 10:30am−12:30pm and Part B runs from 1:30am−3:30pm with an hour for lunch between."
   },
   {
-    "objectID": "Details/schedule.html#day-1",
-    "href": "Details/schedule.html#day-1",
+    "objectID": "Details/schedule.html#day-1-june-1-2023",
+    "href": "Details/schedule.html#day-1-june-1-2023",
     "title": "Schedule",
-    "section": "Day 1",
-    "text": "Day 1\n10:30am – 3:30pm EDT (June 1, 2023)\n\nOverview\nBasic Programming\nBasic Data Wrangling\n\nZoom Link: https://zoom.us/j/TBA"
+    "section": "Day 1 (June 1, 2023)",
+    "text": "Day 1 (June 1, 2023)\nZoom Link: https://zoom.us/j/TBA\n\nPart 1A: Overview and Basic Programming\n\nOverview\nR and RStudio\nConsole and Math\nAssignment\nNaming\nFunctions\n\n\n\nPart 1B: Basic Programming and Wrangling\n\nVectors\nStrings\nPackages\nTidy Data\nTibbles\nData Files"
   },
   {
-    "objectID": "Details/schedule.html#day-2",
-    "href": "Details/schedule.html#day-2",
+    "objectID": "Details/schedule.html#day-2-june-2-2023",
+    "href": "Details/schedule.html#day-2-june-2-2023",
     "title": "Schedule",
-    "section": "Day 2",
-    "text": "Day 2\n10:30am – 3:30pm EDT (June 2, 2023)\n\nExploratory Data Analysis\nCorrelations\nLinear Modeling\n\nZoom Link: https://zoom.us/j/TBA"
+    "section": "Day 2 (June 2, 2023)",
+    "text": "Day 2 (June 2, 2023)\nZoom Link: https://zoom.us/j/TBA\n\nPart 2A: Data Exploration and Analysis\n\nFactors and NAs\nData Summary\nHistograms\nCorrelations\nComparing Two Groups\nComparing Many Groups\n\n\n\nPart 2B: General Linear Modeling\n\nSimple Regression\nMultiple Regression\nCategorical Predictors\nInteraction Effects\nFormula Resources\nRegression Diagnostics"
   },
   {
     "objectID": "index.html",
