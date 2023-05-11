@@ -1,5 +1,8 @@
 ---
 title: "Schedule"
+format:
+  html:
+    toc: false
 ---
 
 :::{.text-center}
