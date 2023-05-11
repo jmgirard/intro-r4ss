@@ -1,0 +1,30 @@
+---
+title: "Schedule"
+---
+
+:::{.text-center}
+![](../img/date_picker_2780E3.svg){width="50%"}
+:::
+
+This is a two-day workshop where each day runs from 10:30am&#8722;3:30pm [EDT](https://time.is/EDT) and is broken into two parts.<br />
+Part A runs from 10:30am&#8722;12:30pm and Part B runs from 1:30am&#8722;3:30pm with an hour for lunch between.
+
+## Day 1
+
+10:30am – 3:30pm [EDT](https://time.is/EDT) (June 1, 2023)
+
+  -   Overview
+  -   Basic Programming
+  -   Basic Data Wrangling
+
+Zoom Link: <https://zoom.us/j/TBA>
+
+## Day 2
+
+10:30am – 3:30pm [EDT](https://time.is/EDT) (June 2, 2023)
+
+  -   Exploratory Data Analysis
+  -   Correlations
+  -   Linear Modeling
+
+Zoom Link: <https://zoom.us/j/TBA>

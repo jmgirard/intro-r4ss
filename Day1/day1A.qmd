@@ -1,0 +1,29 @@
+---
+title: "Day 1A"
+---
+
+![](../img/teaching_2780E3.svg){.hero}
+
+Description text
+
+## Slides
+
+<iframe class="slide-deck" src="./Slides/_1A_Slides.html" title="Day 1A Slideshow">
+</iframe>
+
+[Click here to view the slides in their own window.](./Slides/_01A_Slides.html)
+
+## Practice
+
+1.    A
+
+2.    B
+
+3.    C
+
+## Readings
+
+  -   A
+  -   B
+  -   C
+  
