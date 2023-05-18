@@ -4,7 +4,7 @@ title: "Day 1A"
 
 ![](../img/teaching_2780E3.svg){.hero}
 
-Description text
+We will begin with an overview of the workshop, an introduction to R and RStudio, and the basics of programming. The latter will cover objects, naming, and functions.
 
 ## Slides
 
@@ -15,15 +15,124 @@ Description text
 
 ## Practice
 
-1.    A
+### Question 1.
 
-2.    B
+Read what the user wanted to do and look at the command they sent to R. Fix the errors in the commands and calculate the answers.
 
-3.    C
+a)  I want to add 20 and 0.2 and divide that sum by 4.1. But I get an error when I try:<br />`[20 + .2] \ 4.1`
+b)  I want to multiply 6 by the sum of 2 and 1,300. But I get an error when I try:<br />`6 x (2 + 1,300)`
+
+<p><details>
+<summary>Click here for the answer key</summary>
+<blockquote>
+
+**Answer (a)**
+
+Change the brackets `[]` to parentheses `()` because parentheses `()` are the order of operations operator in R. Also, change the backslash `\` to a forward slash `/` because forward slash `/` is the division operator in R.
+
+```{r}
+#| comment: "#>"
+#| collapse: true
+
+(20 + .2) / 4.1
+```
+
+**Answer (b)**
+
+Change the `x` to an asterisk `*` because asterisk `*` is the multiplication operator in R. Also, remove the comma `,` from `1,300` because R doesn't use commas to delimit digits in large numbers.
+
+```{r}
+#| comment: "#>"
+#| collapse: true
+
+6 * (2 + 1300)
+```
+
+</blockquote></details></p>
+
+---
+
+### Question 2
+
+Which of the following commands do you think will create an error in R? Why?
+
+a) `score@T1 <- 3.2`
+b) `score_at_T1 <- 3.2`
+c) `score at T1 <- 3.2`
+d) `1_score <- 3.2`
+e) `ScoreAtTime1 <- 3.2`
+
+Make your best guesses just by looking at the commands and then check your guesses by running the commands in R.
+
+<p><details>
+<summary>Click here for the answer key</summary>
+
+> The following commands will create an error in R: **a** (`@` is not allowed in an object name), **c** (spaces are not allowed in an object name), and **d** (the first character in an object name cannot be a number).
+
+</details></p>
+
+---
+
+### Question 3
+
+a) Use the `cos()` function to calculate the cosine of 3 and assign it to a variable called `y`. Print the value of `y` to the console. 
+b) Use a function to round `y` to the nearest whole number.
+c) Use a function to round `y` to two decimal places.
+
+<p><details>
+<summary>Click here for the answer key</summary>
+<blockquote>
+
+```{r}
+#| collapse: true
+
+# Part (a)
+y <- cos(3)
+y
+
+# Part (b)
+round(y)
+
+# Part (c)
+round(y, digits = 2)
+```
+
+</blockquote></details></p>
+
+---
+
+### Question 4
+
+What do you expect the result to be for the following commands?
+
+a) `sqrt(4 + 5)`
+b) `sqrt(4) + 5`
+
+Make your best guesses just by looking at the commands and then check your guesses by running the commands in R.
+
+<p><details>
+<summary>Click here for the answer key</summary>
+<blockquote>
+
+```{r}
+#| collapse: true
+
+# Part (a): Add then square root, same as sqrt(9)
+sqrt(4 + 5)
+
+# Part (b): Square root then add, same as 2 + 5
+sqrt(4) + 5 
+```
+
+</blockquote></details></p>
 
 ## Readings
 
-  -   A
-  -   B
-  -   C
-  
+  -   ["Chapter 3: Workflow - Basics"](https://r4ds.hadley.nz/workflow-basics.html) from R4DS (2E)
+  -   ["Chapter 7: Workflow - Scripts and Projects"](https://r4ds.hadley.nz/workflow-scripts.html) from R4DS (2E)
+
+## Fun Stuff
+
+"The Literal Genie" - What it feels like to talk to R sometimes
+
+{{< video https://www.youtube-nocookie.com/embed/58l7ZqoU0a0 >}}

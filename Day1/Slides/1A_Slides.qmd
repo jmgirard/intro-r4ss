@@ -283,7 +283,7 @@ format:
 2.  Visit [cloud.r-project.org](https://cloud.r-project.org)
 3.  Click "Download R for Windows"
 4.  Click the "base" subdirectory link
-5.  Click "Download R-4.X.X" (e.g., 4.2.2)
+5.  Click "Download R-4.X.X" (e.g., 4.3.0)
 6.  Run the downloaded .exe file
 7.  Select all the default options
 8.  Complete the installation wizard
