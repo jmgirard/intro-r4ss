@@ -1,5 +1,8 @@
 ---
 title: "Day 1A"
+format:
+  html:
+    css: ../styles.css
 ---
 
 ![](../img/teaching_2780E3.svg){.hero}
