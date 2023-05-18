@@ -3,6 +3,7 @@ title: "Day 1A"
 format:
   html:
     css: ../styles.css
+    highlight-style: zenburn
 ---
 
 ![](../img/teaching_2780E3.svg){.hero}
