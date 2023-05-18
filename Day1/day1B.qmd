@@ -1,5 +1,8 @@
 ---
 title: "Day 1B"
+format:
+  html:
+    css: ../styles.css
 ---
 
 ![](../img/spreadsheets_2780E3.svg){.hero}
@@ -16,11 +19,16 @@ Description text
 
 ## Practice
 
-1.    A
+### Question 1
 
-2.    B
+---
 
-3.    C
+### Question 2
+
+---
+
+### Question 3
+
 
 ## Readings
 

@@ -7,7 +7,7 @@ format:
 
 ![](../img/teaching_2780E3.svg){.hero}
 
-We will begin with an overview of the workshop, an introduction to R and RStudio, and the basics of programming. The latter will cover objects, naming, and functions.
+We will begin with an overview of the workshop, an introduction to R and RStudio, and the basics of programming. The latter will cover basic math operations, creating and naming objects, and calling functions.
 
 ## Slides
 
