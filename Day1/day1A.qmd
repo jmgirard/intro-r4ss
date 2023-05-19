@@ -3,7 +3,6 @@ title: "Day 1A"
 format:
   html:
     css: ../styles.css
-    highlight-style: zenburn
 ---
 
 ![](../img/teaching_2780E3.svg){.hero}
@@ -135,11 +134,13 @@ sqrt(4) + 5
   -   ["Chapter 3: Workflow - Basics"](https://r4ds.hadley.nz/workflow-basics.html) from *R4DS (2E)*
   -   ["Chapter 7: Workflow - Scripts and Projects"](https://r4ds.hadley.nz/workflow-scripts.html) from *R4DS (2E)*
 
-<!-- ## Fun Stuff -->
+## Fun Stuff -->
 
-<!-- "The Literal Genie" - What it feels like to talk to R sometimes -->
+### "The Literal Genie" 
 
-<!-- {{< video https://www.youtube-nocookie.com/embed/58l7ZqoU0a0 >}} -->
+What it feels like to talk to R sometimes...
+
+{{< video https://www.youtube-nocookie.com/embed/58l7ZqoU0a0 >}}
 
 
 ::: {.text-center}
