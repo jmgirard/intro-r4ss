@@ -25,21 +25,14 @@
     "href": "Day1/day1A.html#readings",
     "title": "Day 1A",
     "section": "Readings",
-    "text": "Readings\n\n“Chapter 3: Workflow - Basics” from R4DS (2E)\n“Chapter 7: Workflow - Scripts and Projects” from R4DS (2E)"
-  },
-  {
-    "objectID": "Day1/day1A.html#fun-stuff",
-    "href": "Day1/day1A.html#fun-stuff",
-    "title": "Day 1A",
-    "section": "Fun Stuff",
-    "text": "Fun Stuff\n“The Literal Genie” - What it feels like to talk to R sometimes"
+    "text": "Readings\n\n“Chapter 3: Workflow - Basics” from R4DS (2E)\n“Chapter 7: Workflow - Scripts and Projects” from R4DS (2E)\n\n\n\n\n\nContinue to Day 1B Materials  »"
   },
   {
     "objectID": "Day1/day1B.html",
     "href": "Day1/day1B.html",
     "title": "Day 1B",
     "section": "",
-    "text": "Description text"
+    "text": "We continue after lunch with an introduction to more complex object types in R (i.e., vectors for storing collections of multiple objects, strings for storing text data, and tibbles for storing data sets), packages for adding new features to R, best practices for organizing data in spreadsheets, and importing/exporting data files into/from R."
   },
   {
     "objectID": "Day1/day1B.html#slides",
@@ -60,7 +53,7 @@
     "href": "Day1/day1B.html#readings",
     "title": "Day 1B",
     "section": "Readings",
-    "text": "Readings\n\n“Section 2.2.1: The penguins data frame” from R4DS (2E)\n“Section 6.2: Tidy Data” from R4DS (2E)\n“Chapter 8: Data Import” from R4DS (2E)\n“Data organization in spreadsheets” in The American Statistician"
+    "text": "Readings\n\n“Section 2.2.1: The penguins data frame” from R4DS (2E)\n“Section 6.2: Tidy Data” from R4DS (2E)\n“Chapter 8: Data Import” from R4DS (2E)\n“Data organization in spreadsheets” in The American Statistician\n\n\nContinue to Day 2A Materials  »"
   },
   {
     "objectID": "Day2/day2A.html",
@@ -88,7 +81,7 @@
     "href": "Day2/day2A.html#readings",
     "title": "Day 2A",
     "section": "Readings",
-    "text": "Readings\n\nA\nB\nC"
+    "text": "Readings\n\nA\nB\nC\n\n\nContinue to Day 2B Materials  »"
   },
   {
     "objectID": "Day2/day2B.html",

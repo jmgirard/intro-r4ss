@@ -26,4 +26,7 @@ Description text
   -   A
   -   B
   -   C
-  
+
+::: {.text-center}
+<a href="day2B.html" class="btn btn-primary mt-5" role="button" >Continue to Day 2B Materials&nbsp;&nbsp;&raquo;</a>
+:::

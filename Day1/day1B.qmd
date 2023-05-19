@@ -8,7 +8,7 @@ format:
 ![](../img/spreadsheets_2780E3.svg){.hero}
 
 
-Description text
+We continue after lunch with an introduction to more complex object types in R (i.e., *vectors* for storing collections of multiple objects, *strings* for storing text data, and *tibbles* for storing data sets), packages for adding new features to R, best practices for organizing data in spreadsheets, and importing/exporting data files into/from R.
 
 ## Slides
 
@@ -36,4 +36,8 @@ Description text
   -   ["Section 6.2: Tidy Data"](https://r4ds.hadley.nz/data-tidy.html#sec-tidy-data) from *R4DS (2E)*
   -   ["Chapter 8: Data Import"](https://r4ds.hadley.nz/data-import.html) from *R4DS (2E)*
   - ["Data organization in spreadsheets"](https://doi.org/10.1080/00031305.2017.1375989) in *The American Statistician*
-  
+
+
+::: {.text-center}
+<a href="../Day2/day2A.html" class="btn btn-primary mt-5" role="button" >Continue to Day 2A Materials&nbsp;&nbsp;&raquo;</a>
+:::

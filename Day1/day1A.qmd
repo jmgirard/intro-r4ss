@@ -135,8 +135,13 @@ sqrt(4) + 5
   -   ["Chapter 3: Workflow - Basics"](https://r4ds.hadley.nz/workflow-basics.html) from *R4DS (2E)*
   -   ["Chapter 7: Workflow - Scripts and Projects"](https://r4ds.hadley.nz/workflow-scripts.html) from *R4DS (2E)*
 
-## Fun Stuff
+<!-- ## Fun Stuff -->
 
-"The Literal Genie" - What it feels like to talk to R sometimes
+<!-- "The Literal Genie" - What it feels like to talk to R sometimes -->
 
-{{< video https://www.youtube-nocookie.com/embed/58l7ZqoU0a0 >}}
+<!-- {{< video https://www.youtube-nocookie.com/embed/58l7ZqoU0a0 >}} -->
+
+
+::: {.text-center}
+<a href="day1B.html" class="btn btn-primary mt-5" role="button" >Continue to Day 1B Materials&nbsp;&nbsp;&raquo;</a>
+:::
