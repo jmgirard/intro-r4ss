@@ -132,8 +132,8 @@ sqrt(4) + 5
 
 ## Readings
 
-  -   ["Chapter 3: Workflow - Basics"](https://r4ds.hadley.nz/workflow-basics.html) from R4DS (2E)
-  -   ["Chapter 7: Workflow - Scripts and Projects"](https://r4ds.hadley.nz/workflow-scripts.html) from R4DS (2E)
+  -   ["Chapter 3: Workflow - Basics"](https://r4ds.hadley.nz/workflow-basics.html) from *R4DS (2E)*
+  -   ["Chapter 7: Workflow - Scripts and Projects"](https://r4ds.hadley.nz/workflow-scripts.html) from *R4DS (2E)*
 
 ## Fun Stuff
 

@@ -32,7 +32,8 @@ Description text
 
 ## Readings
 
-  -   A
-  -   B
-  -   C
+  -   ["Section 2.2.1: The penguins data frame"](https://r4ds.hadley.nz/data-visualize.html#the-penguins-data-frame) from *R4DS (2E)*
+  -   ["Section 6.2: Tidy Data"](https://r4ds.hadley.nz/data-tidy.html#sec-tidy-data) from *R4DS (2E)*
+  -   ["Chapter 8: Data Import"](https://r4ds.hadley.nz/data-import.html) from *R4DS (2E)*
+  - ["Data organization in spreadsheets"](https://doi.org/10.1080/00031305.2017.1375989) in *The American Statistician*
   
