@@ -21,6 +21,35 @@ We continue after lunch with an introduction to more complex object types in R (
 
 ### Question 1.
 
+Imagine that you ran a stand selling bananas for three days. On the first day, you sold \$30 worth of bananas and spent \$15 on supplies. On the second day, you sold \$50 worth of bananas and spent \$15 on supplies. On the third day, you sold $40 worth of bananas and spent \$100 on repairs to the stand (due to an unfortunate fire).
+
+a) Create two vectors named `sales` and `costs` to store how much you sold and how much you spent on each day, respectively.
+
+b) Subtract the `costs` object from the `sales` object and save the result to a new object named `profits`. Print this to see your profits per day.
+
+c) Use the `sum()` function to calculate your total profits over all three days. Was your effort *fruitful*, i.e., did you make money overall?
+
+<p><details>
+<summary>Click here for the answer key</summary>
+<blockquote>
+
+```{r}
+#| collapse: true
+
+# Part (a)
+sales <- c(30, 50, 40)
+costs <- c(15, 15, 100)
+
+# Part (b)
+profits <- sales - costs
+profits
+
+# Part (c): No, I lost money!
+sum(profits)
+```
+
+### Question 2.
+
 a) Create a character vector named `flavors` that contains the following strings and print it: 
     - Cookies & Cream
     - Americone Dream (R)
@@ -72,7 +101,7 @@ tolower(flavors)
 
 ---
 
-## Question 2.
+## Question 3.
 
 The following table summarizes the season information for the eight seasons of AMC's *Breaking Bad* show. 
 
@@ -80,7 +109,7 @@ a) Tidy up this data and save it to a tibble. Decide for yourself how to handle 
 
 b) Save the tibble you created to a CSV file named "breaking_bad.csv".
 
-![](../../img/breaking_bad_wikipedia.png)
+![](../img/breaking_bad_wikipedia.png)
 
 <p><details>
 <summary>Click here for the answer key</summary><blockquote>
@@ -126,6 +155,26 @@ breaking_bad
 write_csv(breaking_bad, "breaking_bad.csv")
 ```
 
+## Question 4.
+
+Install the `praise` package. Then load the installed package in your Quarto document and experiment with the `praise()` function by running it several times with no arguments. What does the function seem to do?
+
+<p><details>
+<summary>Click here for the answer key</summary><blockquote>
+**Answer**
+
+```{r}
+#| collapse: true
+
+# install.packages("praise")
+library(praise)
+praise()
+praise()
+```
+
+The function seems to create strings that praise/compliment the user.
+</blockquote></details></p>
+
 
 ## Readings
 
@@ -133,6 +182,7 @@ write_csv(breaking_bad, "breaking_bad.csv")
   -   ["Section 6.2: Tidy Data"](https://r4ds.hadley.nz/data-tidy.html#sec-tidy-data) from *R4DS (2E)*
   -   ["Chapter 8: Data Import"](https://r4ds.hadley.nz/data-import.html) from *R4DS (2E)*
   - ["Data organization in spreadsheets"](https://doi.org/10.1080/00031305.2017.1375989) in *The American Statistician*
+  - ["Chapter 15: Strings](https://r4ds.hadley.nz/strings.html) in *R4DS (2E)*
 
 
 ## Fun Stuff
@@ -145,7 +195,7 @@ A lesson about the importance of strings...
 
 ### Fundamentals of Tidying
 
-She doesn't like formatting-as-data either...
+Marie doesn't like formatting-as-data either...
 
 {{< video https://www.youtube-nocookie.com/embed/bjUlC8aEb7s >}}
 
