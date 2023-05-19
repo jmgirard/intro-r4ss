@@ -28,6 +28,13 @@
     "text": "Readings\n\n“Chapter 3: Workflow - Basics” from R4DS (2E)\n“Chapter 7: Workflow - Scripts and Projects” from R4DS (2E)"
   },
   {
+    "objectID": "Day1/day1A.html#fun-stuff",
+    "href": "Day1/day1A.html#fun-stuff",
+    "title": "Day 1A",
+    "section": "Fun Stuff",
+    "text": "Fun Stuff\n“The Literal Genie” - What it feels like to talk to R sometimes"
+  },
+  {
     "objectID": "Day1/day1B.html",
     "href": "Day1/day1B.html",
     "title": "Day 1B",
@@ -46,7 +53,7 @@
     "href": "Day1/day1B.html#practice",
     "title": "Day 1B",
     "section": "Practice",
-    "text": "Practice\n\nA\nB\nC"
+    "text": "Practice\n\nQuestion 1\n\n\n\nQuestion 2\n\n\n\nQuestion 3"
   },
   {
     "objectID": "Day1/day1B.html#readings",
@@ -166,166 +173,5 @@
     "title": "Introduction to R for Social Scientists",
     "section": "Frequently Asked Questions",
     "text": "Frequently Asked Questions\n\nWhy enroll in this workshop?\nWhile there are many great educational resources for learning R, including some free video courses and textbooks, this workshop will provide a structured, guided, and communal environment that is tailor-built for researchers in the social, behavioral, and medical sciences. Thus, it emphasizes the concepts and skills most needed by such researchers. In particular, it teaches modern data science techniques using tools from the tidyverse ecosystem (e.g., the dplyr, tidyr, and ggplot2 packages) and statistical techniques using tools from the easystats ecosystem (e.g., the parameters, performance, modelbased, and see packages). The beauty of these tools is that they are both beginner-friendly and scalable to solve more complex problems and interface with more advanced techniques.\n\n\nWill this workshop cover extensions of the ANOVA framework?\nThis workshop will cover how to implement one-way analysis of variance (ANOVA) to compare the means of multiple groups, as well as how to implement post-hoc pairwise t-tests to probe significant ANOVAs. However, this workshop will not cover the theory of these techniques or how to implement extensions of the ANOVA framework, such as factorial ANOVA, ANCOVA, MANCOVA, or repeated measures ANCOVA. These omissions are partly due to time constraints but also due to the instructor believing that the questions answered by these extensions are almost always better answered using linear regression and its extensions such as MLM and SEM. This workshop will show how to use linear regression to answer the questions answered by one-way and factorial ANOVA as well as ANCOVA. The Intermediate R for Social Scientists workshop will show how to use MLM to answer the questions answered by repeated measures ANCOVA, and other workshops will show how to use SEM to answer the questions answered by MANCOVA.\n\n\nWill this workshop cover non-parametric or Bayesian tests?\nR offers many great tools for non-parametric hypothesis testing and Bayesian estimation. This workshop will briefly mention non-parametric alternatives to the Pearson correlation and non-parametric tests for comparing two or more group means (and show how to implement them in R). However, this topic goes beyond the scope of an introductory workshop and will not be covered in great detail. Similarly, although the instructor makes extensive use of Bayesian estimation in his own work, this topic will not be covered here."
-  },
-  {
-    "objectID": "Day1/day1A.html#fun-stuff",
-    "href": "Day1/day1A.html#fun-stuff",
-    "title": "Day 1A",
-    "section": "Fun Stuff",
-    "text": "Fun Stuff\n“The Literal Genie” - What it feels like to talk to R sometimes"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html",
-    "href": "Day1/Slides/1A_Slides.html",
-    "title": "Introduction to R for Social Scientists",
-    "section": "",
-    "text": "Workshop Day 1A | 2023-06-01 Jeffrey M. Girard | Pitt Methods"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#instructor",
-    "href": "Day1/Slides/1A_Slides.html#instructor",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Instructor",
-    "text": "Instructor\n\n\n\n\nJeffrey Girard, PhD affcom.ku.edu/girard jmgirard@ku.edu\n\n\n\n\n\n\nBackground\n\nAssistant Professor, University of Kansas\nResearch Postdoc, Carnegie Mellon University\nPhD Student, University of Pittsburgh\n\n\n\n\n\nResearch Areas\n\nPsychological Assessment\nAffective/Interpersonal Communication\nApplied Statistics and Machine Learning\nData Science and Software Engineering"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#r-rationale",
-    "href": "Day1/Slides/1A_Slides.html#r-rationale",
-    "title": "Introduction to R for Social Scientists",
-    "section": "R Rationale",
-    "text": "R Rationale\n\n\n\nThink of your computer as the engine of a car\n\nIt provides raw power for computation\n\n\n\n\nThe R language is like the controls for the car\n\nIt lets you apply and direct that power\n\n\n\n\n\nRStudio is like a fancy dashboard for the car\n\nIt adds extra information and convenience\n\n\n\n\n\nAn R package is like an add-on for the car\n\nIt adds new features and capabilities"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#workshop-goals",
-    "href": "Day1/Slides/1A_Slides.html#workshop-goals",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Workshop Goals",
-    "text": "Workshop Goals\n\n\n\nThis is a beginner-friendly workshop aimed at social scientists with little to no experience in R\n\n\n\nMy goal this week is to “teach you how to drive”\n\n\n\n\nThrough lectures and live coding, you will learn the fundamentals of programming, data wrangling, visualization, and modeling in R\n\n\n\n\nThrough hands-on exercises, you will gain confidence in your skills and ability to learn\n\n\n\n\nI will help you get your “driver’s license” but you will need to practice to become a pro"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#workshop-roadmap",
-    "href": "Day1/Slides/1A_Slides.html#workshop-roadmap",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Workshop Roadmap",
-    "text": "Workshop Roadmap\n\n\n\n\n\n\nDAY 1A\n\n\nDAY 2A\n\n\n\n\nIntro/Overview\n\n\nFactors/NAs\n\n\n\n\nR Console/RStudio\n\n\nData Exploration\n\n\n\n\nObjects/Functions\n\n\nCorrelations/Groups\n\n\n\n\nDAY 1B\n\n\nDAY 2B\n\n\n\n\nVectors/Strings\n\n\nLinear Modeling I\n\n\n\n\nPackages/Tibbles\n\n\nLinear Modeling II\n\n\n\n\nImport/Export\n\n\nLinear Modeling III"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#workshop-etiquette",
-    "href": "Day1/Slides/1A_Slides.html#workshop-etiquette",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Workshop Etiquette",
-    "text": "Workshop Etiquette\n\n\n\nThings to Do\n\nBehave respectfully and with patience\nAsk for help in chat or “raise hand”\nTurn your camera on or off as desired\nCome and go from workshop as needed\n\n\n\n\nThings Not to Do\n\nDon’t disparage yourself or others\nDon’t stay confused for too long\nDon’t unmute yourself when not talking\nDon’t re-sell the workshop materials"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#programming-is-a-superpower",
-    "href": "Day1/Slides/1A_Slides.html#programming-is-a-superpower",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Programming is a Superpower",
-    "text": "Programming is a Superpower\n\n\n\nProgramming is how we talk to and control our amazing computers\nIt gives us power and flexibility\nEverything we do in this course will be accomplished via programming\nProgramming will leave a record of what we did (i.e., code), so we can later reuse, adapt, and share it"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#common-data-science-languages",
-    "href": "Day1/Slides/1A_Slides.html#common-data-science-languages",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Common Data Science Languages",
-    "text": "Common Data Science Languages\n\nGeneral Purpose\n\nR (interactive, welcoming)\n\nStrengths: statistics, data wrangling, data visualization\nWeaknesses: relatively slow, not security-focused\n\n\n\n\nPython (popular, versatile)\n\nStrengths: automation, machine learning, data wrangling\nWeaknesses: relatively slow\n\n\n\n\n\nJava / C++ / Scala / Julia (faster but older and harder or newer and smaller)\n\n\n\n\n\nSpecial Purpose\n\nJavaScript (web), SQL (databases), Swift (mobile), MATLAB (neuroscience), etc."
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#the-r-ecosystem",
-    "href": "Day1/Slides/1A_Slides.html#the-r-ecosystem",
-    "title": "Introduction to R for Social Scientists",
-    "section": "The R Ecosystem",
-    "text": "The R Ecosystem\n\n\n\nThink of your computer as the engine of a car\n\nIt provides raw power for computation\n\n\n\n\nThe R language is like the controls for the car\n\nIt lets you apply and direct that power\n\n\n\n\n\nRStudio is like a fancy dashboard for the car\n\nIt adds extra information and convenience\n\n\n\n\n\nAn R package is like an add-on for the car\n\nIt adds new features and capabilities"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#installing-r",
-    "href": "Day1/Slides/1A_Slides.html#installing-r",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Installing R",
-    "text": "Installing R\n\n\n\nWindows\n\nOpen a web browser\nVisit cloud.r-project.org\nClick “Download R for Windows”\nClick the “base” subdirectory link\nClick “Download R-4.X.X” (e.g., 4.3.0)\nRun the downloaded .exe file\nSelect all the default options\nComplete the installation wizard\n\n\n\n\nMac OS\n\nOpen a web browser\nVisit cloud.r-project.org\nClick “Download R for macOS”\nClick “R-4.X.X.pkg” (e.g., 4.2.2)\nRun the downloaded .pkg file\nSelect all the default options\nComplete the installation wizard\n\n\n\n\n\n\nNote. You will need to repeat this process every time a new version of R is released (every 4–5 months)."
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#installing-rstudio",
-    "href": "Day1/Slides/1A_Slides.html#installing-rstudio",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Installing RStudio",
-    "text": "Installing RStudio\n\n\n\nWindows\n\nOpen a web browser\nVisit rstudio.com/download\nScroll down until you find the table under the “All Installers” section\nFind the row for “Windows 10/11”\nClick “RStudio-2022.XX.X-XXX.exe”\nRun the downloaded .exe file\nSelect all the default options\nComplete the installation wizard\n\n\n\n\nMac OS\n\nOpen a web browser\nVisit rstudio.com/download\nScroll down until you find the table under the “All Installers” section\nFind the row for “macOS 10.15+”\nClick “RStudio-2022.XX.X-XXX.dmg”\nRun the downloaded .dmg file\nDrag the RStudio icon to your Applications folder (if you want)\n\n\n\n\n\n\nNote. You will need to repeat this process every time a new version of RStudio is released (every 2–4 months)."
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#rstudio-window",
-    "href": "Day1/Slides/1A_Slides.html#rstudio-window",
-    "title": "Introduction to R for Social Scientists",
-    "section": "RStudio Window",
-    "text": "RStudio Window\n\n\n\n\nNote. You can customize RStudio (e.g., the fonts, color themes, and pane layout) under “Tools &gt; Global Options”."
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#r-will-grant-your-wishes",
-    "href": "Day1/Slides/1A_Slides.html#r-will-grant-your-wishes",
-    "title": "Introduction to R for Social Scientists",
-    "section": "R will Grant your Wishes",
-    "text": "R will Grant your Wishes\n\n\n\nR is like a well-meaning but overly literal genie\n\nIt has the power to grant almost any wish\nBut we must phrase our wishes carefully!\nWe will always get what we ask for…\n…but not always what we wanted.\n\n\n\n\nMastering the R language means learning…\n\nHow to properly phrase commands\nHow to decipher error messages\nHow to view code from R’s perspective\nHow to detect and correct small mistakes"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#communicating-with-r",
-    "href": "Day1/Slides/1A_Slides.html#communicating-with-r",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Communicating with R",
-    "text": "Communicating with R\n\n\n\nThe Console is like a chat window with R\n\nYou send a command to R and get a response\nNeither side of the conversation is saved\n\n\n\n\nAn R Script is like an email thread with R\n\nYou send many commands to R all at once\nOnly your side of the conversation is saved\n\n\n\n\n\nA Quarto Document is like a scrapbook with R\n\nYou can combine code and formatted text\nBoth sides of the conversation are saved"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#console-live-coding",
-    "href": "Day1/Slides/1A_Slides.html#console-live-coding",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Console Live Coding",
-    "text": "Console Live Coding\n\n# Addition\n\n10+3\n10 + 3 # spaces are optional but recommended\n\n\n# Subtraction\n\n10 - 3\n\n\n# Multiplication\n\n10 * 3 # correct\n10 x 3 # error\n\n\n# Division\n\n10 / 3 # correct\n10 \\ 3 # error\n\n\n# Exponentiation\n\n10 ^ 2\n\n\n# Order of Operations\n\n10 + 3 * 2\n(10 + 3) * 2\n\n\n# Negative Numbers\n\n10 + -30\n\n\n# Decimals and Fractions\n\n1.234\n(1 / 3)\n\n\n# Leading and Trailing Zeros\n\n09.870\n\n\n# Large Numbers\n\n9876543 # correct\n9,876,543 # error\n9 876 543 # error"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#scripts-live-coding",
-    "href": "Day1/Slides/1A_Slides.html#scripts-live-coding",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Scripts Live Coding",
-    "text": "Scripts Live Coding\n\n# Creating a new script\n\n## Option 1: File &gt; New File &gt; R Script\n## Option 2: Top bar: white square with green plus icon\n## Option 3: Ctrl+Shift+N (Win) Cmd+Shift+N (Mac)\n## A new pane will be added to the RStudio window called the Source Editor\n\n\n# Entering commands into script\n\n## In the Source Editor, we can add many lines of code to a script\n## This allows for longer and more complex operations\n## Think of it like drafting an email with many instructions\n(1.4 + 2.8 + 9.3) / 3\n30.1 - 24.7\n\n\n# Running one line of code\n\n## Hitting Enter (Win) or Return (Mac) does not run the code\n## We can run one line of code at a time to see its results in console\n## Option 1: With cursor on a line, click the Run button (top-right)\n## Option 2: With cursor on a line, Ctrl+Enter (Win) or Cmd+Return (Mac)\n\n\n# Running many lines of code\n\n## We can run multiple lines of code at once to see results in console\n## Option 1: Highlight lines with mouse, click the Run button (top-right)\n## Option 2: Highlight lines with mouse, Ctrl+Enter (Win) or Cmd+Return (Mac)\n## We can even run all lines of code in a script at once\n## Option 1: Click the Source button (top-right)\n## Option 2: Ctrl+Shift+Enter (Win) or Cmd+Shift+Return (Mac)\n\n\n# Adding comments to scripts\n\n## To help communicate the purpose of our code, we can add comments\n## Comments will be ignored by R and are only there for human readers\n## We always start a comment in an R script with a hash symbol: #\n## I have been using comments in this very section you are reading!\n\n# Calculate the average score on the quiz\n(1.4 + 2.8 + 9.3) / 3\n\n# Calculate the difference between exam 1 and exam 2\n30.1 - 24.7\n\n100 / 9 # we can even have comments at the end of line (start will still run)\n\n\n# Saving the script file\n\n## Option 1: File &gt; Save\n## Option 2: Source bar: blue and white disk icon\n## Option 3: Ctrl+S (Win) Cmd+S (Mac)\n## For now, save it wherever; we'll learn about Projects in [02b]\n## You will now have a .R file that you can keep and/or transfer\n## Only the code/input is saved in the script, not the results/output"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#assignment-1",
-    "href": "Day1/Slides/1A_Slides.html#assignment-1",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Assignment",
-    "text": "Assignment\n\n\n\nIt is often useful to store data in named objects\n\nThis makes the data easier to use and re-use\nThis makes the code easier to write and read\n\n\n\n\nWhich command is easier to follow?\n\nDial 7 8 5 8 6 4 0 8 4 1\nCall Office Phone\n\n\n\n\n\nNamed objects are created using assignment\n\nGive a name then an arrow then the data\n\n\n\n\n\n\noffice &lt;- 7858640841"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#assignment-live-coding",
-    "href": "Day1/Slides/1A_Slides.html#assignment-live-coding",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Assignment Live Coding",
-    "text": "Assignment Live Coding\n\n# LESSON: Assigning and printing\n\nx &lt;- 2\nx\n\n# ==============================================================================\n\n# USECASE: Using an object in math (a la algebra) \n\nx * 4\n\n2 * 4\n\n# ==============================================================================\n\n# LESSON: You must use assignment to update an object\n\nx\n\nx + 1\n\nx # still 2\n\nx &lt;- x + 1\nx # updated to 3\n\n# ==============================================================================\n\n# USECASE: We can use the same object multiple times in a line\n\n(10 + x - 1) / x\n\n# ==============================================================================\n\n# USECASE: We can also use an object to create another object\n\ny &lt;- 10 + x\ny\n\n# ==============================================================================\n\n# USECASE: We can also use multiple objects in a line\n\ny / x"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#naming-1",
-    "href": "Day1/Slides/1A_Slides.html#naming-1",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Naming",
-    "text": "Naming\n\n\n\nObject names can only include:\n\nLetters: a-Z\nNumbers: 0-9\nUnderscores: _\nPeriods: .\n\n\n\n\nAdditional Rules:\n\nMust start with a letter or period\nCannot contain spaces or dashes\nCannot contain other symbols\nNames are case-sensitive (age ≠ Age)"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#naming-live-coding",
-    "href": "Day1/Slides/1A_Slides.html#naming-live-coding",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Naming Live Coding",
-    "text": "Naming Live Coding\n\n# LESSON: Good names are a balancing act\n\nx &lt;- 93 # what is it?\n\nrate &lt;- 93 # too short\n\nheart_rate_in_beats_per_minute &lt;- 93 # too long\n\nheart_rate_bpm &lt;- 93 # just right\n\n# ==============================================================================\n\n# PITFALL: Don't try to include spaces or dashes in names\n\nheart rate &lt;- 93 # error\n\nheart-rate &lt;- 93 # error\n\n# ==============================================================================\n\n# PITFALL: Don't try to include special symbols\n\nage@time2 &lt;- 12 # error\n\nage_time2 &lt;- 12 # correct\n\n# ==============================================================================\n\n# PITFALL: Don't try to put a number or underscore first\n\nheart_rate_1 &lt;- 93 # correct\n\n1_heart_rate &lt;- 93 # error\n\n_heart_rate &lt;- 93 # error\n\n# ==============================================================================\n\n# LESSON: Object names are case-sensitive\n\nheart_rate &lt;- 93\n\nHeart_rate &lt;- 88\n\nheart_rate # still 93\n\nHeart_rate # a new object"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#functions-1",
-    "href": "Day1/Slides/1A_Slides.html#functions-1",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Functions",
-    "text": "Functions\n\n\n\nRecipes allow chefs to cook up tasty treats\n\nRecipes call for ingredients\nRecipes involve one or more steps\nSteps transform ingredients into treats\n\n\n\n\nFunctions are like customizable recipes\n\nFunctions call for inputs (“arguments”)\nFunctions involve one or more lines of code\nCode transforms inputs into outputs\nUsing functions requires parentheses (usually)\n\n\n\n\n\n\nout &lt;- f(in1, in2)"
-  },
-  {
-    "objectID": "Day1/Slides/1A_Slides.html#functions-live-coding",
-    "href": "Day1/Slides/1A_Slides.html#functions-live-coding",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Functions Live Coding",
-    "text": "Functions Live Coding\n\n# USECASE: Function can perform a task more easily and readably\n\n# TEMPLATE: output &lt;- function_name(input)\n\n9 ^ (1 / 2)\n\nx &lt;- sqrt(9)\nx\n\n# ==============================================================================\n\n# LESSON: We can also use functions to transform objects\n\ny &lt;- 9\n\nsqrt(y)\n\n# ==============================================================================\n\n# LESSON: We can even use functions to transform the result of calculations\n\n2 / 3\n\nround(2 / 3)\n\n# ==============================================================================\n\n# LESSON: We can customize what a function does using arguments\n\n# TEMPLATE: output &lt;- function_name(argument, argument_name = argument_value)\n\nround(2 / 3, digits = 2)\n\nround(2 / 3, digits = 3)\n\n# ==============================================================================\n\n# LESSON: Some arguments are optional because they have default values\n\nround(2 / 3) # the default value for digits is 0\n\nround(2 / 3, digits = 0)"
   }
 ]

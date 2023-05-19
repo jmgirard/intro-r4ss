@@ -542,6 +542,8 @@ format:
 ## Only the code/input is saved in the script, not the results/output
 ```
 
+<!-- Assignment -->
+
 # Assignment
 
 ## Assignment {.smaller}
@@ -627,6 +629,8 @@ y
 y / x
 ```
 
+<!-- Naming -->
+
 # Naming
 
 ## Naming {.smaller}
@@ -709,6 +713,8 @@ heart_rate # still 93
 
 Heart_rate # a new object
 ```
+
+<!-- Functions -->
 
 # Functions
 
