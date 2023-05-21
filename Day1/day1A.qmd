@@ -7,7 +7,7 @@ format:
 
 ![](../img/teaching_2780E3.svg){.hero}
 
-We will begin with an overview of the workshop, an introduction to R and RStudio, and the basics of programming. The latter will cover basic math operations, creating and naming objects, and calling functions.
+We begin with an overview of the workshop, an introduction to R and RStudio, and the basics of programming. The latter will cover basic math operations, creating and naming objects, and calling functions.
 
 ## Slides
 
@@ -86,19 +86,28 @@ c) Use a function to round `y` to two decimal places.
 <summary>Click here for the answer key</summary>
 <blockquote>
 
+**Answer (a)**
 ```{r}
 #| collapse: true
 
-# Part (a)
 y <- cos(3)
 y
+```
 
-# Part (b)
+**Answer (b)**
+```{r}
+#| collapse: true
+
 round(y)
+```
 
-# Part (c)
+**Answer (c)**
+```{r}
+#| collapse: true
+
 round(y, digits = 2)
 ```
+
 
 </blockquote></details></p>
 
@@ -117,17 +126,27 @@ Make your best guesses just by looking at the commands and then check your guess
 <summary>Click here for the answer key</summary>
 <blockquote>
 
+**Answer (a)**
 ```{r}
 #| collapse: true
 
-# Part (a): Add then square root, same as sqrt(9)
 sqrt(4 + 5)
 
-# Part (b): Square root then add, same as 2 + 5
+```
+
+Add then square root, same as sqrt(9)
+
+**Answer (b)**
+```{r}
+#| collapse: true
+
 sqrt(4) + 5 
 ```
 
+Square root then add, same as 2 + 5
+
 </blockquote></details></p>
+
 
 ## Readings
 

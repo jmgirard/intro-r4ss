@@ -239,3 +239,9 @@ iframe.slide-deck {
 .blue2 { color: #2780E3; }
 
 .f3 { font-size: 20px !important; }
+
+
+.fixwidth {
+  display: inline-block;
+  width: 150px;
+}

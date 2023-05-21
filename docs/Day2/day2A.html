@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -59,6 +93,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -151,6 +187,9 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#question-1." id="toc-question-1." class="nav-link" data-scroll-target="#question-1.">Question 1.</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3." id="toc-question-3." class="nav-link" data-scroll-target="#question-3.">Question 3.</a></li>
   <li><a href="#readings" id="toc-readings" class="nav-link" data-scroll-target="#readings">Readings</a></li>
   </ul>
 </nav>
@@ -176,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p><img src="../img/statistics_2780E3.svg" class="hero img-fluid"></p>
-<p>Description text</p>
+<p>We resume on Day 2 with a discussion of special data types (for categorical data and missing values), data summarization and exploration, and basic statistical inference. The latter will include various types of correlation, two-sample tests for comparing two groups, and oneway tests for comparing multiple groups.</p>
 <section id="slides" class="level2">
 <h2 class="anchored" data-anchor-id="slides">Slides</h2>
 <iframe class="slide-deck" src="./Slides/2A_Slides.html" title="Day 2A Slideshow">
@@ -185,18 +224,188 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="practice" class="level2">
 <h2 class="anchored" data-anchor-id="practice">Practice</h2>
-<ol type="1">
-<li><p>A</p></li>
-<li><p>B</p></li>
-<li><p>C</p></li>
+</section>
+<section id="question-1." class="level2">
+<h2 class="anchored" data-anchor-id="question-1.">Question 1.</h2>
+<ol type="a">
+<li><p>Download the <a href="#">yearspubs</a> dataset from the workshop website and read it into R.</p></li>
+<li><p>Estimate the correlation between academics’ number of publications (<code>n_pubs</code>) and number of citations (<code>n_cites</code>) in this sample.</p></li>
+<li><p>Compare the average number of citations between male and female academics using a Welch t-test. Which group had more and was the difference significant?</p></li>
+<li><p>Estimate the effect size of this difference.</p></li>
 </ol>
+<p>
+</p><details>
+<summary>
+Click here for the answer key
+</summary>
+<blockquote class="blockquote">
+<p><strong>Answer (a)</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>yearspubs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"yearspubs.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Answer (b)</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(easystats)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">correlation</span>(yearspubs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Correlation Matrix (pearson-method)
+
+Parameter1 | Parameter2 |    r |       95% CI | t(60) |         p
+-----------------------------------------------------------------
+yrs_since  |     n_pubs | 0.65 | [0.48, 0.78] |  6.70 | &lt; .001***
+yrs_since  |    n_cites | 0.37 | [0.14, 0.57] |  3.11 | 0.007**  
+yrs_since  |     salary | 0.51 | [0.29, 0.67] |  4.54 | &lt; .001***
+n_pubs     |    n_cites | 0.34 | [0.10, 0.54] |  2.80 | 0.007**  
+n_pubs     |     salary | 0.43 | [0.21, 0.62] |  3.72 | 0.002**  
+n_cites    |     salary | 0.38 | [0.15, 0.58] |  3.19 | 0.007**  
+
+p-value adjustment method: Holm (1979)
+Observations: 62</code></pre>
+</div>
+</div>
+<p>The correlation between number of publications and citations is 0.34.</p>
+<p><strong>Answer (c)</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">t.test</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> n_cites <span class="sc">~</span> sex,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> yearspubs</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">model_parameters</span>(results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unable to retrieve data from htest object.
+  Returning an approximate effect size using t_to_d().</code></pre>
+</div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Welch Two Sample t-test</caption>
+<colgroup>
+<col style="width: 8%">
+<col style="width: 6%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 13%">
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Group</th>
+<th style="text-align: center;">Mean_Group1</th>
+<th style="text-align: center;">Mean_Group2</th>
+<th style="text-align: center;">Difference</th>
+<th style="text-align: center;">95% CI</th>
+<th style="text-align: center;">d</th>
+<th style="text-align: center;">CI_low.1</th>
+<th style="text-align: center;">CI_high.1</th>
+<th style="text-align: center;">t(60.00)</th>
+<th style="text-align: center;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">n_cites</td>
+<td style="text-align: center;">sex</td>
+<td style="text-align: center;">37.33</td>
+<td style="text-align: center;">42.46</td>
+<td style="text-align: center;">-5.12</td>
+<td style="text-align: center;">(-13.60, 3.36)</td>
+<td style="text-align: center;">-0.31</td>
+<td style="text-align: center;">-13.60</td>
+<td style="text-align: center;">3.36</td>
+<td style="text-align: center;">-1.21</td>
+<td style="text-align: center;">0.232</td>
+</tr>
+</tbody>
+</table>
+<p>Alternative hypothesis: true difference in means between group female and group male is not equal to 0</p>
+</div>
+</div>
+<p>Group 2 (Males) had more citations (42.46) than Group 1 (Females) had (37.33) but this difference was not significant (<span class="math inline">\(p=.232\)</span>).</p>
+<p><strong>Answer (d)</strong></p>
+<p>The effect size was <span class="math inline">\(d=-0.31\)</span> but the difference was not significant <span class="math inline">\((p=.232)\)</span>.</p>
+</blockquote>
+</details>
+<p></p>
+<hr>
+</section>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<p>Using the <code>mpg</code> tibble from the {tidyverse} package, statistically test whether cars with the three different drive trains (<code>drv</code>) get significantly different city fuel efficiency (<code>cty</code>) on average. Calculate the effect size for this difference.</p>
+<p>
+</p><details>
+<summary>
+Click here for the answer key
+</summary>
+<blockquote class="blockquote">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="at">formula =</span> cty <span class="sc">~</span> drv, <span class="at">data =</span> mpg)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">model_parameters</span>(results, <span class="at">effectsize_type =</span> <span class="st">"eta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Sum_Squares</th>
+<th style="text-align: center;">df</th>
+<th style="text-align: center;">Mean_Square</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">p</th>
+<th style="text-align: center;">Eta2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">drv</td>
+<td style="text-align: center;">1878.81</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">939.41</td>
+<td style="text-align: center;">92.68</td>
+<td style="text-align: center;">&lt; .001</td>
+<td style="text-align: center;">0.45</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Residuals</td>
+<td style="text-align: center;">2341.53</td>
+<td style="text-align: center;">231</td>
+<td style="text-align: center;">10.14</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Anova Table (Type 1 tests)</p>
+</div>
+</div>
+<p>The effect size was <span class="math inline">\(\eta^2=0.45\)</span> and the difference was significant <span class="math inline">\((p&lt;.001)\)</span>.</p>
+</blockquote>
+</details>
+<p></p>
+<hr>
+</section>
+<section id="question-3." class="level2">
+<h2 class="anchored" data-anchor-id="question-3.">Question 3.</h2>
+<p>Did you bring your own data? If so, load it into R and explore it using the tools we learned this week. Wrangle it a bit and maybe do some basic statistics on it, estimating correlations and comparing group means.</p>
 </section>
 <section id="readings" class="level2">
 <h2 class="anchored" data-anchor-id="readings">Readings</h2>
 <ul>
-<li>A</li>
-<li>B</li>
-<li>C</li>
+<li><a href="https://r4ds.had.co.nz/factors.html">Chapter 15: Factors</a> from <em>R4DS (2E)</em></li>
+<li><a href="https://learningstatisticswithr.com/book/part-iv-statistical-theory.html">Part IV: Statistical Theory</a> from <em>LSWR</em></li>
+<li><a href="https://learningstatisticswithr.com/book/index.html">Part V: Statistical Tools</a> from <em>LSWR</em></li>
+<li><a href="https://easystats.github.io/correlation/articles/types.html">Correlation Types</a> from <em>correlation</em> package website</li>
+<li><a href="https://easystats.github.io/modelbased/articles/estimate_means.html">Estimate Means</a> from <em>modelbased</em> package website</li>
+<li><a href="https://easystats.github.io/modelbased/articles/estimate_contrasts.html">Estimate Contrasts</a> from <em>modelbased</em> package</li>
 </ul>
 <div class="text-center">
 <p><a href="day2B.html" class="btn btn-primary mt-5" role="button">Continue to Day 2B Materials&nbsp;&nbsp;»</a></p>

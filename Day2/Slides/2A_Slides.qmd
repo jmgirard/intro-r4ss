@@ -1,0 +1,673 @@
+---
+format: 
+  revealjs:
+    css: ../../styles.css
+    slide-number: true
+    show-slide-number: all
+    progress: true
+    history: true
+    hash-type: number
+    theme: default
+    code-block-background: true
+    highlight-style: zenburn
+    code-link: false
+    code-copy: true
+    controls: true
+    pagetitle: "Intro R4SS Day 2A"
+    author-meta: "Jeffrey Girard"
+    date-meta: "2023-06-02"
+---
+
+::: {.my-title}
+# [Introduction to R]{.blue2} <br />for Social Scientists
+
+::: {.my-grey}
+[Workshop Day 2A | 2023-06-01]{}<br />
+[Jeffrey M. Girard | Pitt Methods]{}
+:::
+
+![](../../img/proud_coder_2780E3.svg){.absolute bottom=0 right=0 width=400}
+:::
+
+<!-- Factors -->
+
+# Factors
+
+## Factors {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   [Factors]{.b .blue} are used to represent categorical data
+    -   Factors have multiple possible [levels]{.b .blue}
+    -   Levels are [discrete]{.b .green} and mutually-exclusive
+
+::: {.fragment .mt1}
+-   Sometimes the levels of a factor are stored as numeric "codes"
+    -   e.g., 1=Drama, 2=Action, 3=Comedy
+    -   We need to tell R that these are not real numbers!
+    -   We can even give each level a descriptive [label]{.b .green}
+    -   Or we can just store the levels as labels directly (as strings)
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li cdbgwqyw trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+:::
+:::
+
+
+## Factors Live Coding
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: true
+#| code-line-numbers: false
+
+# USECASE: Ask 10 kids to order 1: nuggets, 2: pizza, or 3: salad
+
+food <- c(2, 2, 1, 2, 1, 2, 1, 1, 2, 2)
+food
+
+# ==============================================================================
+
+# LESSON: We can turn this into a factor with the factor() function
+
+food2 <- factor(food)
+food
+
+# ==============================================================================
+
+# USECASE: We can quickly and easily count each level with table()
+
+table(food2)
+
+# ==============================================================================
+
+# LESSON: We can let R know that level=3 is also possible by specifying levels
+
+food3 <- factor(food, levels = c(1, 2, 3))
+food3
+
+table(food3)
+
+# ==============================================================================
+
+# LESSON: We can also give a label to each level so it is more readable
+
+food4 <- factor(food, levels = c(1, 2, 3), 
+                labels = c("nuggets", "pizza", "salad"))
+food4
+
+table(food4)
+
+# ==============================================================================
+
+# PITFALL: Don't confuse levels and labels
+
+food5 <- factor(food, levels = c("nuggets", "pizza", "salad"),
+                labels = c(1, 2, 3))
+food5 # full of <NA> because it can't find these levels
+
+# ==============================================================================
+
+# USECASE: You can also just store the levels as strings (like self-labels)
+
+genre <- c("pop", "metal", "pop", "rock", "rap", "rap", "pop", "rock")
+genre
+
+genre2 <- factor(genre) # observed levels will be assigned alphabetically
+genre2
+
+table(genre2)
+
+# ==============================================================================
+
+# USECASE: Working with factors in a tibble
+
+library(tidyverse)
+cereal <- read_csv("cereal.csv")
+cereal
+
+cereal$mfr <- factor(cereal$mfr)
+cereal$type <- factor(cereal$type)
+
+table(cereal2$mfr)
+
+table(cereal2$type)
+```
+
+<!-- Missing Values -->
+
+# Missing Values
+
+## Missing Values {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   Sometimes your data will have [missing values]{.b .blue}
+    -   Perhaps these were [never collected]{.b .green}
+    -   Perhaps the values were [lost/corrupted]{.b .green}
+    -   Perhaps the participant [didn't respond]{.b .green}
+
+::: {.fragment .mt1}
+-   We need to tell R which values are missing
+    -   To do so, we set those values to `NA`
+    -   Functions from **tidyverse** make this easy
+:::
+
+::: {.fragment .mt1}
+-   Missingness is often ["contagious"]{.b .green} in R<br />
+    e.g., a vector with `NA` has an unknown mean
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li rwotyanb trigger=loop delay=3000 speed=0.5 colors=secondary:#2a76dd class=rc >}}
+:::
+:::
+
+## Missing Values Live Coding
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: true
+#| code-line-numbers: false
+
+# SETUP: We will need tidyverse for the read function
+
+library(tidyverse)
+
+# ==============================================================================
+
+# PITFALL: Number codes for missingness will mess up calculations in R
+
+heights <- c(149, 158, -999) # here we use -999 to represent a missing value
+
+range(heights)
+
+mean(heights)
+
+log(heights) # our missing value is no longer -999
+
+# ==============================================================================
+
+# USECASE: Use NA for missingness instead
+
+heights2 <- c(149, 158, NA)
+heights2
+
+log(heights2) # the NA stayed an NA (due to contagiousness)
+
+# ==============================================================================
+
+# LESSON: Use na.rm = TRUE to do a summary function ignoring the NAs
+
+mean(heights2) # the mean is an NA (due to contagiousness)
+
+mean(heights2, na.rm = TRUE)
+
+range(heights2, na.rm = TRUE)
+
+# ==============================================================================
+
+# USECASE: Dealing with missing values in tibbles
+
+cereal <- read_csv("cereal.csv")
+
+cereal$rating
+
+range(cereal$rating)
+
+# ==============================================================================
+
+# LESSON: Use na_if() to convert specific values to NA while mutating
+
+cereal2$rating <- na_if(cereal2$rating, -999)
+
+cereal2$rating
+
+range(cereal2$rating, na.rm = TRUE)
+
+# ==============================================================================
+
+# LESSON: Use read_csv(na) to convert specific values to NA while reading
+
+cereal3 <- read_csv("cereal.csv", na = "-999")
+
+cereal3$rating
+
+range(cereal3$rating, na.rm = TRUE)
+```
+
+<!-- Data Summary -->
+
+# Data Summary
+
+## Data Verification {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   It's always a good idea to start with [verification]{.b .blue}
+
+::: {.fragment .mt1}
+-   Check that your variables are the [correct type]{.b .green}
+    -   Configure your [factors]{.b .green}' levels and labels
+    -   Establish ordinal factors' ordering
+    -   Explicitly set your [missing values]{.b .green} to NA
+:::
+
+::: {.fragment .mt1}
+-   Check variables' [extrema]{.b .green} and [distributions]{.b .green}
+    -   Check for erroneous and outlying values
+    -   Check the shape of continuous distributions
+    -   Check the overlap of categorical levels
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li zqwicaxf trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+:::
+:::
+
+## Data Verification Live Coding
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: true
+#| code-line-numbers: false
+
+# SETUP: We will use the tidyverse and easystats packages
+
+library(tidyverse)
+library(easystats)
+
+# ==============================================================================
+
+# SETUP: We will use the salaries data and configure its factors
+
+salaries <- read_csv("salaries.csv")
+salaries
+
+salaries$rank <- factor(salaries$rank, levels = c(1, 2, 3), 
+                        labels = c("Assistant", "Associate", "Full"))
+
+salaries$discipline <- factor(salaries$discipline, levels = c(1, 2), 
+                              labels = c("Applied", "Theoretical"))
+
+salaries$sex <- factor(salaries$sex, levels = c(1, 2), 
+                       labels = c("Female", "Male"))
+
+salaries
+write_csv(salaries, "salaries2.csv")
+
+# ==============================================================================
+
+# LESSON: Then check the summary statistics for problems
+
+summary(salaries)
+
+# ==============================================================================
+
+# LESSON: Describe the distribution of continuous variables
+
+describe_distribution(salaries)
+
+# ==============================================================================
+
+# LESSON: Describe the distributions of discrete variables / factors
+
+data_tabulate(salaries, select = is.factor)
+```
+
+## Exploratory Data Analysis {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   [Variable distributions]{.b .blue} are critical in data analysis
+    -   What are the most and least [common values]{.b .green}?
+    -   What are the [extrema]{.b .green} (min and max values)?
+    -   Are there any [outliers]{.b .green} or impossible values?
+    -   How much [spread]{.b .green} is there in the variable?
+    -   What [shape]{.b .green} does the distribution take?
+
+::: {.fragment .mt1}
+-   Distributions describe a single variable's [variation]{.b .green}
+    -   We can also visualize multiple variables' [covariation]{.b .blue}
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li wovwohsm trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+:::
+:::
+
+## Exploratory Data Analysis Live Coding
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: true
+#| code-line-numbers: false
+
+# PREP: We will need the tidyverse package and some example data
+
+library(tidyverse)
+
+salaries <- read_csv("salaries2.csv")
+
+# ==============================================================================
+
+# USECASE: Visualize the variation of a discrete variable / factor
+
+qplot(x = rank, data = salaries, geom = "bar")
+
+qplot(x = discipline, data = salaries, geom = "bar")
+
+# ==============================================================================
+
+# USECASE: Visualize the variation of a continuous variable
+
+qplot(x = yrs.since.phd, data = salaries, geom = "histogram")
+
+qplot(x = yrs.since.phd, data = salaries, geom = "boxplot")
+
+qplot(x = salary, data = salaries, geom = "histogram")
+
+qplot(x = salary, data = salaries, geom = "boxplot")
+
+# ==============================================================================
+
+# USECASE: Visualize the covariation of two continuous variables
+
+qplot(x = yrs.since.phd, y = salary, data = salaries, geom = "point")
+
+# ==============================================================================
+
+# USECASE: Visualize the covariation of two discrete variables
+
+qplot(x = rank, y = discipline, data = salaries, geom = "jitter")
+
+qplot(x = rank, fill = discipline, data = salaries, geom = "bar")
+
+# ==============================================================================
+
+# USECASE: Visualize the covariation of a discrete and a continuous variable
+
+qplot(x = salary, y = rank, data = salaries, geom = "boxplot")
+
+qplot(x = salary, y = rank, data = salaries, geom = "violin")
+
+# ==============================================================================
+
+# USECASE: Visualize the covariation of multiple variables
+
+qplot(x = yrs.since.phd, y = salary, color = discipline, data = salaries, geom = "point")
+```
+
+<!-- Correlations -->
+
+# Correlations
+
+## Correlations {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   [Correlations]{.b .blue} $(r)$ quantify the strength of the [linear relationship]{.b .green} between two variables from $-1$ to $+1$
+    -   [$r\rightarrow-1$:]{.fixwidth} as $x$ increases, $y$ decreases
+    -   [$r\rightarrow0$:]{.fixwidth} as $x$ increases, $y$ doesn't change
+    -   [$r\rightarrow+1$:]{.fixwidth} as $x$ increases, $y$ also increases
+
+::: {.fragment .mt1}
+-   Correlations may be the focus of statistical inference or just useful descriptive summaries
+:::
+
+::: {.fragment .mt1}
+-   We can easily estimate many [different types]{.b .green} of correlation coefficients in R
+    -   We will use the [easystats](https://easystats.github.io/easystats/) package to accomplish this
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li nbdmfygb trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+:::
+:::
+
+## Correlations Live Coding
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: true
+#| code-line-numbers: false
+
+# SETUP: Load the used packages (if needed) and read in the example dataset
+
+library(tidyverse)
+library(easystats)
+
+salaries <- read_csv("salaries.csv")
+
+# ==============================================================================
+
+# LESSON: The standard correlation test in R
+
+cor.test(salaries$salary, salaries$yrs.since.phd)
+
+# ==============================================================================
+
+# TIP: Fancier correlations with the {easystats} package
+
+results <- correlation(salaries)
+results
+
+# ==============================================================================
+
+# LESSON: Creating and plotting the correlation matrix
+
+summary(results)
+
+plot(summary(results))
+
+# ==============================================================================
+
+# p-value adjustments
+
+correlation(salaries, p_adjust = "none") # very liberal
+
+correlation(salaries, p_adjust = "bonferroni") # very conservative
+
+correlation(salaries, p_adjust = "holm") # recommended
+
+# ==============================================================================
+
+# LESSON: Other correlation methods
+
+correlation(salaries, method = "spearman") # ranks (easier interpretation)
+
+correlation(salaries, method = "kendall") # ranks (more robust and efficient)
+
+correlation(salaries, method = "distance") # linear and nonlinear relationships
+```
+
+<!-- Comparing Groups -->
+
+# Comparing Groups
+
+## Comparing Two Groups {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   A fundamental task in science is comparing the [centrality]{.b .green} of two groups' distributions
+    -   Effect Sizes: Cohen's d or Rank Biserial
+
+::: {.fragment .mt1}
+-   [Independent]{.b .blue} groups are [separate]{.b .green}
+    -   Comparisons are [between]{.b .green} subjects
+    -   *Did students in New York or students in California spend more time on social media?*
+:::
+
+::: {.fragment .mt1}
+-   [Dependent]{.b .blue} groups are [paired]{.b .green}
+    -   Comparisons are [within]{.b .green} subjects
+    -   *Did the students in my class spend more time on social media during the winter or the summer?*
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li wfkxiwtw trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+:::
+:::
+
+## Comparing Two Groups Live Coding
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: true
+#| code-line-numbers: false
+
+library(tidyverse)
+library(easystats)
+
+
+## Independent Groups Example
+
+salaries <- read_csv("salaries.csv")
+salaries
+
+### Exploratory Analysis
+
+qplot(x = salary, y = discipline, data = salaries, geom = "boxplot")
+
+### Parametric Test: Welch's Two Sample t-test
+
+results <- t.test(
+  formula = salary ~ discipline,
+  data = salaries
+)
+model_parameters(results, effectsize_type = "d")
+
+### Non-parametric Alternative: Wilcoxon rank sum test
+### Functions: wilcox.test() and rank_biserial()
+
+
+## Dependent Groups Example
+
+interpersonal <- read_csv("interpersonal.csv")
+interpersonal
+
+### Exploratory Analysis
+
+qplot(x = change_iip, data = interpersonal, geom = "histogram")
+
+### Parametric Test: Paired t-test
+
+results3 <- t.test(
+  formula = Pair(post_iip, pre_iip) ~ 1,
+  data = interpersonal
+)
+model_parameters(results3, effectsize_type = "d")
+
+### Non-parametric Alternative: Wilcoxon signed rank exact test
+### Functions: wilcox.test() and rank_biserial()
+```
+
+
+## Comparing Many Groups {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   We may also compare [more than two]{.b .green} groups
+    -   Independent vs. dependent still applies
+
+::: {.fragment .mt1}
+-   An [omnibus test]{.b .blue} asks *whether* groups are different
+    -   If significant, one or more group is different
+    -   Effect Sizes: $\eta^2$ or $\varepsilon^2$
+:::
+
+::: {.fragment .mt1}
+-   [Posthoc tests]{.b .blue} ask *how* groups are different
+    -   Pairwise tests compare each pair of groups
+    -   They are often "gated" behind omnibus tests
+    -   With many groups, *p*-values are adjusted
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li dugfwxlj trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+:::
+:::
+
+## Comparing Many Groups Live Coding
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: true
+#| code-line-numbers: false
+
+## SETUP
+
+library(tidyverse)
+library(easystats)
+
+
+## Independent Groups Example
+
+salaries <- read_csv("salaries2.csv")
+salaries
+
+### Exploratory Analysis
+
+qplot(x = salary, y = rank, data = salaries, geom = "boxplot")
+
+### Parametric Test: One-Way Analysis of Variance
+
+omnibus <- aov(
+  formula = salary ~ rank,
+  data = salaries
+)
+model_parameters(omnibus, effectsize_type = "eta")
+
+
+em <- estimate_means(omnibus, at = "rank")
+em
+plot(em)
+
+estimate_contrasts(omnibus, contrast = "rank")
+
+
+### Nonparametric Alternative: Kruskal-Wallis Rank Sum Test
+### Functions: kruskal.test() and rank_epsilon_squared()
+### Posthoc: Pairwise Wilcoxon Rank Sum Tests
+### Functions: pairwise.wilcox.test()
+
+
+## Dependent Groups Example
+
+elicit <- read_csv("elicitation.csv")
+
+### Exploratory Analysis
+
+qplot(x = Task, y = Amused, data = elicit, geom = "boxplot")
+
+### Parametric Test: Oneway Repeated Measures ANOVA
+
+omnibus2 <- aov(
+  formula = Amused ~ Task + Error(Subject),
+  data = elicit
+)
+model_parameters(omnibus2, effectsize_type = "eta")
+
+estimate_means(omnibus2, at = "Task")
+estimate_contrasts(omnibus2, contrast = "Task")
+
+### Nonparametric Alternative: Friedman Rank Sum Test
+### Functions: friedman.test() and kendalls_w()
+### Posthoc: Nemenyi-Wilcoxon-Wilcox All-Pairs Test
+### Functions: PMCMRplus::frdAllPairsNemenyiTest()
+```

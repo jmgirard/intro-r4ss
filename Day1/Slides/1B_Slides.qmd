@@ -236,7 +236,7 @@ dyes2
 #| error: true
 #| code-line-numbers: false
 
-# USECASE: The stringr package adds a function to fix capitalization
+# USECASE: The tidyverse package adds a function to fix capitalization
 
 students <- c("mary anne", "BENjamin", "Lee")
 
@@ -252,9 +252,7 @@ str_to_title(students) # error
 
 # - RStudio > Extras pane > Packages tab > Install button
 
-install.packages("stringr")
-
-# PITFALL: Use this command in the console, not in your Quarto document!
+install.packages("tidyverse")
 
 # ==============================================================================
 
@@ -266,7 +264,7 @@ str_to_title(students) # error
 
 # LESSON: We load the package using library()
 
-library("stringr")
+library("tidyverse")
 str_to_title(students) # finally works!
 
 # ==============================================================================
@@ -279,7 +277,13 @@ str_to_title(students) # finally works!
 
 # USECASE: We can see if a package contains any vignettes (articles)
 
-browseVignettes("stringr")
+browseVignettes("tidyverse")
+
+# ==============================================================================
+
+# USECASE: We will use the easystats package tomorrow, so let's install it now
+
+install.packages("easystats")
 ```
 
 
@@ -1125,21 +1129,9 @@ old_gradebook
 
 # ==============================================================================
 
-# PITFALL: Don't use the read.csv() and write.csv() functions
+# USE CASE: Reading in other types of data
 
-old_gradebook <- read.csv("gradebook.csv") # not a tibble
-old_gradebook
-
-# NOTE: This isn't wrong per se, but if you use read.csv() in your assignments,
-#   your Quarto document will be filled with long data displays whereas tibbles
-#   have a much more compact data display format that will make grading easier.
-
-# ==============================================================================
-
-# USE CASE: Tell R to re-code certain values as missing (NA)
-
-old_gradebook <- read_csv("gradebook.csv", na = "?")
-old_gradebook
-
-# NOTE: If there are multiple missing codes, give the na argument a vector.
+# The readxl and googlesheets4 packages work with spreadsheets
+# The haven package works with files from SPSS, SAS, and STATA
+# The rio package tries to detect the type and read in anything
 ```

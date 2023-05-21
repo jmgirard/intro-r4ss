@@ -7,7 +7,7 @@ format:
 
 ![](../img/statistics_2780E3.svg){.hero}
 
-Description text
+We resume on Day 2 with a discussion of special data types (for categorical data and missing values), data summarization and exploration, and basic statistical inference. The latter will include various types of correlation, two-sample tests for comparing two groups, and oneway tests for comparing multiple groups.
 
 ## Slides
 
@@ -18,17 +18,116 @@ Description text
 
 ## Practice
 
-1.    A
+## Question 1.
 
-2.    B
+a) Download the [yearspubs](#) dataset from the workshop website and read it into R.
 
-3.    C
+b) Estimate the correlation between academics' number of publications (`n_pubs`) and number of citations (`n_cites`) in this sample.
+
+c) Compare the average number of citations between male and female academics using a Welch t-test. Which group had more and was the difference significant?
+
+d) Estimate the effect size of this difference.
+
+<p><details>
+<summary>Click here for the answer key</summary>
+<blockquote>
+
+**Answer (a)**
+
+```{r}
+#| comment: "#>"
+#| message: false
+#| collapse: true
+
+library(tidyverse)
+yearspubs <- read_csv("yearspubs.csv")
+```
+
+
+**Answer (b)**
+
+```{r}
+#| message: false
+#| warning: false
+
+library(easystats)
+correlation(yearspubs)
+```
+
+The correlation between number of publications and citations is 0.34.
+
+**Answer (c)**
+
+```{r}
+#| eval: false
+
+results <- t.test(
+  formula = n_cites ~ sex,
+  data = yearspubs
+)
+model_parameters(results)
+```
+
+```{r}
+#| echo: false
+
+results <- t.test(
+  formula = n_cites ~ sex,
+  data = yearspubs
+)
+model_parameters(results, effectsize_type = "d") |> print_md()
+```
+
+Group 2 (Males) had more citations (42.46) than Group 1 (Females) had (37.33) but this difference was not significant ($p=.232$).
+
+**Answer (d)**
+
+The effect size was $d=-0.31$ but the difference was not significant $(p=.232)$.
+
+</blockquote></details></p>
+
+---
+
+## Question 2
+
+Using the `mpg` tibble from the \{tidyverse\} package, statistically test whether cars with the three different drive trains (`drv`) get significantly different city fuel efficiency (`cty`) on average. Calculate the effect size for this difference.
+
+<p><details>
+<summary>Click here for the answer key</summary>
+<blockquote>
+
+```{r}
+#| eval: false
+
+results <- aov(formula = cty ~ drv, data = mpg)
+model_parameters(results, effectsize_type = "eta")
+```
+
+```{r}
+#| echo: false
+
+results <- aov(formula = cty ~ drv, data = mpg)
+model_parameters(results, effectsize_type = "eta") |> print_md()
+```
+
+The effect size was $\eta^2=0.45$ and the difference was significant $(p<.001)$.
+
+</blockquote></details></p>
+
+---
+
+## Question 3.
+
+Did you bring your own data? If so, load it into R and explore it using the tools we learned this week. Wrangle it a bit and maybe do some basic statistics on it, estimating correlations and comparing group means.
 
 ## Readings
 
-  -   A
-  -   B
-  -   C
+  -   [Chapter 15: Factors](https://r4ds.had.co.nz/factors.html) from *R4DS (2E)*
+  -   [Part IV: Statistical Theory](https://learningstatisticswithr.com/book/part-iv-statistical-theory.html) from *LSWR*
+  -   [Part V: Statistical Tools](https://learningstatisticswithr.com/book/index.html) from *LSWR*
+  -   [Correlation Types](https://easystats.github.io/correlation/articles/types.html) from *correlation* package website
+  -   [Estimate Means](https://easystats.github.io/modelbased/articles/estimate_means.html) from *modelbased* package website
+  -   [Estimate Contrasts](https://easystats.github.io/modelbased/articles/estimate_contrasts.html) from *modelbased* package
 
 ::: {.text-center}
 <a href="day2B.html" class="btn btn-primary mt-5" role="button" >Continue to Day 2B Materials&nbsp;&nbsp;&raquo;</a>
