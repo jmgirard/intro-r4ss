@@ -22,7 +22,7 @@ format:
 # [Introduction to R]{.blue2} <br />for Social Scientists
 
 ::: {.my-grey}
-[Workshop Day 2A | 2023-06-01]{}<br />
+[Workshop Day 2A | 2023-06-02]{}<br />
 [Jeffrey M. Girard | Pitt Methods]{}
 :::
 

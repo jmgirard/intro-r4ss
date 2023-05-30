@@ -1,0 +1,31 @@
+---
+format: 
+  revealjs:
+    css: ../../styles.css
+    slide-number: true
+    show-slide-number: all
+    progress: true
+    history: true
+    hash-type: number
+    theme: default
+    code-block-background: true
+    highlight-style: zenburn
+    code-link: false
+    code-copy: true
+    controls: true
+    pagetitle: "Intro R4SS Day 2B"
+    author-meta: "Jeffrey Girard"
+    date-meta: "2023-06-02"
+---
+
+::: {.my-title}
+# [Introduction to R]{.blue2} <br />for Social Scientists
+
+::: {.my-grey}
+[Workshop Day 2B | 2023-06-02]{}<br />
+[Jeffrey M. Girard | Pitt Methods]{}
+:::
+
+![](../../img/proud_coder_2780E3.svg){.absolute bottom=0 right=0 width=400}
+:::
+
