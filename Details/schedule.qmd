@@ -14,7 +14,9 @@ Part A runs from 10:30am&#8722;12:30pm and Part B runs from 1:30am&#8722;3:30pm 
 
 ## Day 1 (June 1, 2023)
 
-Zoom Link: <https://zoom.us/j/TBA>
+**Zoom Link:** <https://us06web.zoom.us/j/81046953294><br />
+**Zoom Passcode:** Please check email or slack<br />
+**Zoom Name:** Please set to the name you registered under
 
 ### Part 1A: Overview and Basic Programming
 
@@ -37,7 +39,9 @@ Zoom Link: <https://zoom.us/j/TBA>
 
 ## Day 2 (June 2, 2023)
 
-Zoom Link: <https://zoom.us/j/TBA>
+**Zoom Link:** <https://us06web.zoom.us/j/81046953294><br />
+**Zoom Passcode:** Please check email or slack<br />
+**Zoom Name:** Please set to the name you registered under
 
 ### Part 2A: Data Exploration and Analysis
 
