@@ -77,7 +77,6 @@
 
 /* Style for code chunk */
 .reveal pre.sourceCode code {
-  color: #ccc;
   background-color: #303030;
   padding: 6px 9px;
   min-height: 550px;
