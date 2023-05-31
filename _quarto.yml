@@ -13,6 +13,8 @@ website:
         menu:
           - text: "Instructor"
             href: ./Details/instructor.qmd
+          - text: "Assistant"
+            href: ./Details/assistant.qmd
           - text: "Schedule"
             href: ./Details/schedule.qmd
           - text: "Recordings"
