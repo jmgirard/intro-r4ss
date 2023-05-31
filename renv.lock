@@ -336,21 +336,16 @@
     },
     "datawizard": {
       "Package": "datawizard",
-      "Version": "0.7.1.8",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteUsername": "easystats",
-      "RemoteRepo": "datawizard",
-      "RemoteRef": "main",
-      "RemoteSha": "49a4ea188167f8893cf89f1008fe47f221c89a86",
-      "RemoteHost": "api.github.com",
+      "Version": "0.7.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
       "Requirements": [
         "R",
         "insight",
         "stats",
         "utils"
       ],
-      "Hash": "1836b51aa8e8bddf1147975fa8d4acdb"
+      "Hash": "001775ea47f92ef8e2916ed0cfa59735"
     },
     "dbplyr": {
       "Package": "dbplyr",
