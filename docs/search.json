@@ -60,7 +60,7 @@
     "href": "Day1/day1B.html#question-3.",
     "title": "Day 1B",
     "section": "Question 3.",
-    "text": "Question 3.\nInstall the praise package. Then load the installed package in your Quarto document and experiment with the praise() function by running it several times with no arguments. What does the function seem to do?\n\n\n\nClick here for the answer key\n\n\nAnswer\n\n# install.packages(\"praise\")\nlibrary(praise)\npraise()\n## [1] \"You are riveting!\"\npraise()\n## [1] \"You are majestic!\"\n\nThe function seems to create strings that praise/compliment the user."
+    "text": "Question 3.\nInstall the praise package. Then load the installed package in your Quarto document and experiment with the praise() function by running it several times with no arguments. What does the function seem to do?\n\n\n\nClick here for the answer key\n\n\nAnswer\n\n# install.packages(\"praise\")\nlibrary(praise)\npraise()\n## [1] \"You are prime!\"\npraise()\n## [1] \"You are dazzling!\"\n\nThe function seems to create strings that praise/compliment the user."
   },
   {
     "objectID": "Day1/day1B.html#question-4.",

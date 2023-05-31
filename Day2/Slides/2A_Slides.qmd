@@ -9,7 +9,7 @@ format:
     hash-type: number
     theme: default
     code-block-background: true
-    highlight-style: zenburn
+    highlight-style: github
     code-link: false
     code-copy: true
     controls: true

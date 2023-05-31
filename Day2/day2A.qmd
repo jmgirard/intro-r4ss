@@ -15,7 +15,7 @@ We resume on Day 2 with a discussion of special data types (for categorical data
 <iframe class="slide-deck" src="./Slides/2A_Slides.html" title="Day 2A Slideshow">
 </iframe>
 
-[Click here to view the slides in their own window.](./Slides/02A_Slides.html)
+[Click here to view the slides in their own window.](./Slides/2A_Slides.html)
 
 ## Practice
 
