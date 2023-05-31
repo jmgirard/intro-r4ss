@@ -56,15 +56,15 @@
     "text": "Practice\n\nQuestion 1.\nImagine that you ran a stand selling bananas for three days. On the first day, you sold $30 worth of bananas and spent $15 on supplies. On the second day, you sold $50 worth of bananas and spent $15 on supplies. On the third day, you sold $40 worth of bananas and spent $100 on repairs to the stand (due to an unfortunate fire).\n\nCreate two vectors named sales and costs to store how much you sold and how much you spent on each day, respectively.\nSubtract the costs object from the sales object and save the result to a new object named profits. Print this to see your profits per day.\nUse the sum() function to calculate your total profits over all three days. Was your effort fruitful, i.e., did you make money overall?\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\n\nsales &lt;- c(30, 50, 40)\ncosts &lt;- c(15, 15, 100)\n\nAnswer (b)\n\nprofits &lt;- sales - costs\nprofits\n## [1]  15  35 -60\n\nAnswer (c)\n\nsum(profits)\n## [1] -10\n\nNo, I lost money!\n\n\n\n\n\n\nQuestion 2.\n\nCreate a character vector named flavors that contains the following strings and print it:\n\nCookies & Cream\nAmericone Dream (R)\nBob Marley’s 1 Love\n\nUse a function to calculate the number of strings in flavors.\nUse another function to calculate the number of characters in each string in flavors.\nLet R know how you feel about ice cream by using a function to either make all the characters in flavors uppercase (you LOVE ice cream) or lowercase (you don’t love ice cream).\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\n\nflavors &lt;- c(\"Cookies & Cream\", \"Americone Dream (R)\", \"Bob Marley's 1 Love\")\nflavors\n#&gt; [1] \"Cookies & Cream\"     \"Americone Dream (R)\" \"Bob Marley's 1 Love\"\n\nAnswer (b)\n\nlength(flavors)\n#&gt; [1] 3\n\nAnswer (c)\n\nnchar(flavors)\n#&gt; [1] 15 19 19\n\nAnswer (d)\n\ntoupper(flavors)\n#&gt; [1] \"COOKIES & CREAM\"     \"AMERICONE DREAM (R)\" \"BOB MARLEY'S 1 LOVE\"\ntolower(flavors)\n#&gt; [1] \"cookies & cream\"     \"americone dream (r)\" \"bob marley's 1 love\""
   },
   {
-    "objectID": "Day1/day1B.html#question-4.",
-    "href": "Day1/day1B.html#question-4.",
+    "objectID": "Day1/day1B.html#question-3.",
+    "href": "Day1/day1B.html#question-3.",
     "title": "Day 1B",
-    "section": "Question 4.",
-    "text": "Question 4.\nInstall the praise package. Then load the installed package in your Quarto document and experiment with the praise() function by running it several times with no arguments. What does the function seem to do?\n\n\n\nClick here for the answer key\n\n\nAnswer\n\n# install.packages(\"praise\")\nlibrary(praise)\npraise()\n## [1] \"You are impressive!\"\npraise()\n## [1] \"You are laudable!\"\n\nThe function seems to create strings that praise/compliment the user."
+    "section": "Question 3.",
+    "text": "Question 3.\nInstall the praise package. Then load the installed package in your Quarto document and experiment with the praise() function by running it several times with no arguments. What does the function seem to do?\n\n\n\nClick here for the answer key\n\n\nAnswer\n\n# install.packages(\"praise\")\nlibrary(praise)\npraise()\n## [1] \"You are riveting!\"\npraise()\n## [1] \"You are majestic!\"\n\nThe function seems to create strings that praise/compliment the user."
   },
   {
-    "objectID": "Day1/day1B.html#question-4.-1",
-    "href": "Day1/day1B.html#question-4.-1",
+    "objectID": "Day1/day1B.html#question-4.",
+    "href": "Day1/day1B.html#question-4.",
     "title": "Day 1B",
     "section": "Question 4.",
     "text": "Question 4.\nThe following table summarizes the season information for the eight seasons of AMC’s Breaking Bad show.\n\nTidy up this data and save it to a tibble. Decide for yourself how to handle season 5 (should it be a single observation or two?). For the first and last aired dates, just store the year as a number.\nSave the tibble you created to a CSV file named “breaking_bad.csv”.\n\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\n\nVersion with one observation for the season five parts\n\n\nlibrary(tidyverse)\nseason &lt;- c(1, 2, 3, 4, 5)\nepisodes &lt;- c(7, 13, 13, 13, 16)\nfirst_air &lt;- c(2008, 2009, 2010, 2011, 2012)\nlast_air &lt;- c(2008, 2009, 2010, 2011, 2013)\nnetwork &lt;- \"AMC\"\nbreaking_bad &lt;- \n  tibble(season, episodes, first_air, last_air, network)\nbreaking_bad\n## # A tibble: 5 × 5\n##   season episodes first_air last_air network\n##    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;  \n## 1      1        7      2008     2008 AMC    \n## 2      2       13      2009     2009 AMC    \n## 3      3       13      2010     2010 AMC    \n## 4      4       13      2011     2011 AMC    \n## 5      5       16      2012     2013 AMC\n\n\nVersion with two separate observations for the season five parts\n\n\nseason &lt;- c(1, 2, 3, 4, 5.1, 5.2)\nepisodes &lt;- c(7, 13, 13, 13, 8, 8)\nfirst_air &lt;- c(2008, 2009, 2010, 2011, 2012, 2013)\nlast_air &lt;- c(2008, 2009, 2010, 2011, 2012, 2013)\nnetwork &lt;- \"AMC\"\nbreaking_bad &lt;- \n  tibble(season, episodes, first_air, last_air, network)\nbreaking_bad\n## # A tibble: 6 × 5\n##   season episodes first_air last_air network\n##    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;  \n## 1    1          7      2008     2008 AMC    \n## 2    2         13      2009     2009 AMC    \n## 3    3         13      2010     2010 AMC    \n## 4    4         13      2011     2011 AMC    \n## 5    5.1        8      2012     2012 AMC    \n## 6    5.2        8      2013     2013 AMC\n\nAnswer (b)\n\nwrite_csv(breaking_bad, \"breaking_bad.csv\")"
@@ -250,96 +250,5 @@
     "title": "Introduction to R for Social Scientists",
     "section": "Frequently Asked Questions",
     "text": "Frequently Asked Questions\n\nWhy enroll in this workshop?\nWhile there are many great educational resources for learning R, including some free video courses and textbooks, this workshop will provide a structured, guided, and communal environment that is tailor-built for researchers in the social, behavioral, and medical sciences. Thus, it emphasizes the concepts and skills most needed by such researchers. In particular, it teaches modern data science techniques using tools from the tidyverse ecosystem (e.g., the dplyr, tidyr, and ggplot2 packages) and statistical techniques using tools from the easystats ecosystem (e.g., the parameters, performance, modelbased, and see packages). The beauty of these tools is that they are both beginner-friendly and scalable to solve more complex problems and interface with more advanced techniques.\n\n\nWill this workshop cover extensions of the ANOVA framework?\nThis workshop will cover how to implement one-way analysis of variance (ANOVA) to compare the means of multiple groups, as well as how to implement post-hoc pairwise t-tests to probe significant ANOVAs. However, this workshop will not cover the theory of these techniques or how to implement extensions of the ANOVA framework, such as factorial ANOVA, ANCOVA, MANCOVA, or repeated measures ANCOVA. These omissions are partly due to time constraints but also due to the instructor believing that the questions answered by these extensions are almost always better answered using linear regression and its extensions such as MLM and SEM. This workshop will show how to use linear regression to answer the questions answered by one-way and factorial ANOVA as well as ANCOVA. The Intermediate R for Social Scientists workshop will show how to use MLM to answer the questions answered by repeated measures ANCOVA, and other workshops will show how to use SEM to answer the questions answered by MANCOVA.\n\n\nWill this workshop cover non-parametric or Bayesian tests?\nR offers many great tools for non-parametric hypothesis testing and Bayesian estimation. This workshop will briefly mention non-parametric alternatives to the Pearson correlation and non-parametric tests for comparing two or more group means (and show how to implement them in R). However, this topic goes beyond the scope of an introductory workshop and will not be covered in great detail. Similarly, although the instructor makes extensive use of Bayesian estimation in his own work, this topic will not be covered here."
-  },
-  {
-    "objectID": "Day2/Slides/2B_Slides.html",
-    "href": "Day2/Slides/2B_Slides.html",
-    "title": "Introduction to R for Social Scientists",
-    "section": "",
-    "text": "Workshop Day 2B | 2023-06-02 Jeffrey M. Girard | Pitt Methods"
-  },
-  {
-    "objectID": "Day2/Slides/2B_Slides.html#basic-regression",
-    "href": "Day2/Slides/2B_Slides.html#basic-regression",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Basic Regression",
-    "text": "Basic Regression\n\n\n\nBasic regression predicts one variable \\(y\\) from another variable \\(x\\) using a straight line\n\n\n\nThis line is defined by two parameters\n\nThe intercept is the value of \\(y\\) when \\(x=0\\)\nThe slope is the change in \\(y\\) expected for a change of 1 in \\(x\\) (from \\(x=0\\) to \\(x=1\\))\n\n\n\n\n\nWe will use lm() to fit regression models\n\nThis will solve using ordinary least squares\nWe need to give it the data and a formula\n\n\n\n\n\n\n\n\n[3B] Model II"
-  },
-  {
-    "objectID": "Day2/Slides/2B_Slides.html#basic-regression-live-coding",
-    "href": "Day2/Slides/2B_Slides.html#basic-regression-live-coding",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Basic Regression Live Coding",
-    "text": "Basic Regression Live Coding\n\n# SETUP: Load the used packages (if needed) and read in the example dataset\n\nlibrary(tidyverse)\nlibrary(datawizard)\nlibrary(parameters)\nlibrary(performance)\nlibrary(effects)\nlibrary(ggeffects)\n\nyearspubs &lt;- read_csv(\"yearspubs.csv\")\nyearspubs\n\n# ==============================================================================\n\n# LESSON: Regression is a special case of the linear model, so we use lm()\n\nfit &lt;- lm(\n  formula = salary ~ yrs_since,\n  data = yearspubs\n)\n\n# ==============================================================================\n\n# TIP: Get a parameter summary using model_parameters() from {parameters}\n\nfit\n\nmodel_parameters(fit)\n\n# ==============================================================================\n\n# TIP: Get effect sizes (standardized results) using standardize = \"refit\"\n\nmodel_parameters(fit, standardize = \"refit\")\n\n# ==============================================================================\n\n# TIP: Get a performance summary using model_performance() from {performance}\n\nmodel_performance(fit)\n\n# ==============================================================================\n\n# TIP: Visualize the model's predictions using ggeffect() from {ggeffects}\n\nggeffect(fit, terms = \"yrs_since\") |&gt; plot()\n\n# ==============================================================================\n\n# LESSON: To center the predictor, use mutate() and center() from {datawizard}\n\nyearspubs &lt;- mutate(yearspubs, yrs_since_c = center(yrs_since))\n\nfit_c &lt;- lm(\n  formula = salary ~ yrs_since_c,\n  data = yearspubs\n)\n\nmodel_parameters(fit_c)\n\n# NOTE: Centering will change the intercept in basic regression (not the slope)\n\n\n[3B] Model II"
-  },
-  {
-    "objectID": "Day2/Slides/2B_Slides.html#multiple-regression",
-    "href": "Day2/Slides/2B_Slides.html#multiple-regression",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Multiple Regression",
-    "text": "Multiple Regression\n\n\n\nWe can also include multiple predictors to assess the partial effect of each predictor\n\nThis allows us to account for the variance shared by the predictors and the outcome\n\n\n\n\nThis changes the slopes’ interpretations\n\nThe slope of \\(x_1\\) is no longer just the change in \\(y\\) expected for a change of 1 in \\(x_1\\)\nIt is now the change in \\(y\\) expected for a change of 1 in \\(x_1\\) when controlling for \\(x_2\\)\nThe slope of \\(x_2\\) similarly controls for \\(x_1\\)\n\n\n\n\n\n\n\n\n[3B] Model II"
-  },
-  {
-    "objectID": "Day2/Slides/2B_Slides.html#multiple-regression-1",
-    "href": "Day2/Slides/2B_Slides.html#multiple-regression-1",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Multiple Regression",
-    "text": "Multiple Regression\n\n\n\nIn the model \\(y \\sim x_1\\)\n\nThe \\(x_1\\) slope captures b + c\n\n\n\n\nIn the model \\(y \\sim x_2\\)\n\nThe \\(x_2\\) slope captures c + f\n\n\n\n\n\nIn the model \\(y \\sim x_1 + x_2\\)\n\nThe \\(x_1\\) slope captures b only\nThe \\(x_2\\) slope captures f only\nSo the overlap of c is removed\n\n\n\n\n\n\n\n\n\n\n[3B] Model II"
-  },
-  {
-    "objectID": "Day2/Slides/2B_Slides.html#multiple-regression-live-coding",
-    "href": "Day2/Slides/2B_Slides.html#multiple-regression-live-coding",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Multiple Regression Live Coding",
-    "text": "Multiple Regression Live Coding\n\n# SETUP: Load the used packages (if needed) and read in the example dataset\n\nlibrary(tidyverse)\nlibrary(parameters)\nlibrary(performance)\nlibrary(ggeffects)\n\nyearspubs &lt;- read_csv(\"../data/yearspubs.csv\")\nyearspubs\n\n# ==============================================================================\n\n# LESSON: To add more predictors to the formula, just separate them by +\n\nfit3 &lt;- lm(\n  formula = salary ~ yrs_since + n_pubs,\n  data = yearspubs\n)\n\nmodel_parameters(fit3)\n\nmodel_performance(fit3)\n\nmodel_parameters(fit3, standardize = \"refit\")\n\n# ==============================================================================\n\n# LESSON: Our effect plots are now \"marginalized\" across the other variable\n\nggeffect(fit3, terms = \"yrs_since\") |&gt; plot()\n\nggeffect(fit3, terms = \"n_pubs\") |&gt; plot()\n\n# ==============================================================================\n\n# USECASE: We can compare our models in terms of parameters and performance\n\nfit1 &lt;- lm(salary ~ yrs_since, data = yearspubs)\nfit2 &lt;- lm(salary ~ n_pubs, data = yearspubs)\n\ncompare_parameters(fit1, fit2, fit3)\n\ncompare_performance(fit1, fit2, fit3)\n\n\n[3B] Model II"
-  },
-  {
-    "objectID": "Day2/Slides/2B_Slides.html#categorical-predictors",
-    "href": "Day2/Slides/2B_Slides.html#categorical-predictors",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Categorical Predictors",
-    "text": "Categorical Predictors\n\n\n\nTo include categorical predictors in regression models, we can use dummy coding\n\nThis creates binary predictor variables\n\n\n\n\nOne reference group does not get a slope\n\nInstead, it controls the model intercept\nAll other groups’ slopes are just deviations from the intercept\n\n\n\n\n\nThere is no need to create dummy codes in R\n\nJust include a factor as a predictor variable\nThe first level will be the reference group\n\n\n\n\n\n\n\n\n[3B] Model II"
-  },
-  {
-    "objectID": "Day2/Slides/2B_Slides.html#categorical-live-coding",
-    "href": "Day2/Slides/2B_Slides.html#categorical-live-coding",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Categorical Live Coding",
-    "text": "Categorical Live Coding\n\n# SETUP: Load the used packages (if needed) and read in the example dataset\n\nlibrary(tidyverse)\nlibrary(parameters)\nlibrary(performance)\nlibrary(ggeffects)\n\nsalaries &lt;- read_csv(\"salaries.csv\")\nsalaries\n\n# ==============================================================================\n\n# USECASE: Compare three groups with regression (instead of oneway anova)\n\nsalaries &lt;- \n  salaries |&gt; \n  mutate(\n    rank = factor(\n      rank, \n      levels = c(\"Assistant\", \"Associate\", \"Full\") # put Assistant first\n    )\n  )\n\nfit &lt;- lm(salary ~ rank, data = salaries)\n\nmodel_parameters(fit) # estimate intercept and slopes\n\nmodel_parameters(fit, standardize = \"refit\") # estimate standardized effects\n\nmodel_performance(fit) # estimate model performance\n\nggeffect(fit, terms = \"rank\") # estimate group means for rank\n\nggeffect(fit, terms = \"rank\") |&gt; plot() # plot group means for rank\n\nfit |&gt; aov() |&gt; model_parameters() # recreate ANOVA-style F-test\n\n# ==============================================================================\n\n# USECASE: Change the reference group to the Associate rank\n\nsalaries2 &lt;- \n  salaries |&gt; \n  mutate(\n    rank = factor(\n      rank, \n      levels = c(\"Associate\", \"Assistant\", \"Full\") # put Associate first\n    )\n  )\n\nfit2 &lt;- lm(salary ~ rank, data = salaries2)\n\nmodel_parameters(fit2) # now the intercept is the Associate rank's mean\n\nggeffect(fit2, terms = \"rank\") # these estimates are identical to before\n\n# ==============================================================================\n\n# USECASE: Regression can even mix categorical and continuous predictors!\n\nfit3 &lt;- lm(salary ~ rank + yrs.since.phd, data = salaries)\n\nmodel_parameters(fit3)\n\n# NOTE: The intercept is now the mean of Assistant rank with 0 years since PhD\n\nmodel_parameters(fit3, standardize = \"refit\")\n\nmodel_performance(fit3)\n\nggeffect(fit3, terms = c(\"yrs.since.phd\", \"rank\")) |&gt; plot()\n\n\n[3B] Model II"
-  },
-  {
-    "objectID": "Day2/Slides/2B_Slides.html#interaction-effects",
-    "href": "Day2/Slides/2B_Slides.html#interaction-effects",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Interaction Effects",
-    "text": "Interaction Effects\n\n\n\nWe may want to know if the effect of one predictor depends on the value on another predictor\n\nDoes the effect of hours of exercise on weight loss depend on biological sex?\nDoes the effect of hours of exercise on weight loss depend on the effort put in?\n\n\n\n\nTo answer these, we can test interaction effects\n\nInteraction effects are just slopes for the product of two or more predictors\nWe can include continuous and categorical predictors in interaction effects\n\n\n\n\n\n\n\n\n[3B] Model II"
-  },
-  {
-    "objectID": "Day2/Slides/2B_Slides.html#interactions-live-coding",
-    "href": "Day2/Slides/2B_Slides.html#interactions-live-coding",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Interactions Live Coding",
-    "text": "Interactions Live Coding\n\n# SETUP: Load the used packages (if needed) and read in the example dataset\n\nlibrary(tidyverse)\nlibrary(parameters)\nlibrary(performance)\nlibrary(ggeffects)\n\nexercise &lt;- read_csv(\"exercise.csv\")\nexercise\n\n# ==============================================================================\n\n# LESSON: Fit a model with no interaction effect for comparison\n\nfit1 &lt;- lm(loss ~ hours + sex, data = exercise)\n\nmodel_parameters(fit1)\n\nggeffect(fit1, terms = c(\"hours\", \"sex\")) |&gt; plot()\n\n\n# ==============================================================================\n\n# LESSON: Does the effect of hours depend on sex (and vice versa)?\n\nfit2 &lt;- lm(loss ~ hours * sex, data = exercise)\n\nmodel_parameters(fit2)\n\nggeffect(fit2, terms = c(\"hours\", \"sex\")) |&gt; plot()\n\n# ==============================================================================\n\n# LESSON: Fit a model with no interaction effect for comparison\n\nfit3 &lt;- lm(loss ~ hours + effort, data = exercise)\n\nmodel_parameters(fit3)\n\nggeffect(fit3, terms = c(\"hours\", \"effort\")) |&gt; plot()\n\n# NOTE: A model with no interaction will have parallel lines\n\n# ==============================================================================\n\n# LESSON: Does the effect of hours depend on effort (and vice versa)?\n\nfit4 &lt;- lm(loss ~ hours * effort, data = exercise)\n\nmodel_parameters(fit4)\n\nggeffect(fit4, terms = c(\"hours\", \"effort\")) |&gt; plot() # put hours on x-axis\n\nggeffect(fit4, terms = c(\"effort\", \"hours\")) |&gt; plot() # put effort on x-axis\n\n# ==============================================================================\n\n# LESSON: Be cautious about higher-level interactions\n\nfit5 &lt;- lm(loss ~ hours * effort * sex, data = exercise)\n\nmodel_parameters(fit5)\n\nggeffect(fit5, terms = c(\"hours\", \"effort\", \"sex\")) |&gt; plot()\n\n\n[3B] Model II"
-  },
-  {
-    "objectID": "Day2/Slides/2B_Slides.html#a-formula-resource",
-    "href": "Day2/Slides/2B_Slides.html#a-formula-resource",
-    "title": "Introduction to R for Social Scientists",
-    "section": "A Formula Resource",
-    "text": "A Formula Resource\n\n\n\n\n\nFormula\n\n\nSlopes Estimated\n\n\n\n\ny ~ x\n\n\n\\(x\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ny ~ x + w\n\n\n\\(x\\)\n\n\n\\(w\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ny ~ x * w\n\n\n\\(x\\)\n\n\n\\(w\\)\n\n\n\n\n\\(xw\\)\n\n\n\n\n\n\n\n\n\n\ny ~ x + w + z\n\n\n\\(x\\)\n\n\n\\(w\\)\n\n\n\\(z\\)\n\n\n\n\n\n\n\n\n\n\n\n\ny ~ x * w + z\n\n\n\\(x\\)\n\n\n\\(w\\)\n\n\n\\(z\\)\n\n\n\\(xw\\)\n\n\n\n\n\n\n\n\n\n\ny ~ x * (w + z)\n\n\n\\(x\\)\n\n\n\\(w\\)\n\n\n\\(z\\)\n\n\n\\(xw\\)\n\n\n\\(xz\\)\n\n\n\n\n\n\n\n\ny ~ x * w * z\n\n\n\\(x\\)\n\n\n\\(w\\)\n\n\n\\(z\\)\n\n\n\\(xw\\)\n\n\n\\(xz\\)\n\n\n\\(wz\\)\n\n\n\\(xwz\\)\n\n\n\n\n\nNote that predictors can be continuous (i.e., numbers) or categorical (i.e., factors), but if a categorical predictor has more than two levels, you will end up with additional slopes.\n\n\n\n[3B] Model II"
-  },
-  {
-    "objectID": "Day2/Slides/2B_Slides.html#regression-diagnostics",
-    "href": "Day2/Slides/2B_Slides.html#regression-diagnostics",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Regression Diagnostics",
-    "text": "Regression Diagnostics\n\n\n\nLM makes some assumptions about the data\n\nIf violated, this can lead to…\nBiased coefficient estimates\nBiased standard error estimates\n\n\n\n\nRegression Diagnostics check for…\n\nViolated assumptions\nOutlier observations\nMulticollinearity\nPrediction quality\n\n\n\n\n\n\n\n\n[3B] Model II"
-  },
-  {
-    "objectID": "Day2/Slides/2B_Slides.html#diagnostics-live-coding",
-    "href": "Day2/Slides/2B_Slides.html#diagnostics-live-coding",
-    "title": "Introduction to R for Social Scientists",
-    "section": "Diagnostics Live Coding",
-    "text": "Diagnostics Live Coding\n\nfit &lt;- lm(salary ~ yrs.since.phd + yrs.service, data = salaries)\n\n# ==============================================================================\n\n# USECASE: Check if the residuals appear normally distributed\n\nfit |&gt; check_normality()\n\nfit |&gt; check_normality() |&gt; plot()\n\n# ==============================================================================\n\n# USECASE: Check if the residuals show heteroscedasticity (constant variance)\n\nfit |&gt; check_heteroscedasticity()\n\nfit |&gt; check_heteroscedasticity() |&gt; plot()\n\n# ==============================================================================\n\n# USECASE: Check if the model's predictions match the observed distribution\n\nfit |&gt; check_predictions()\n\n# ==============================================================================\n\n# USECASE: Check if any of the predictors show collinearity with others\n\nfit |&gt; check_collinearity()\n\nfit |&gt; check_collinearity() |&gt; plot()\n\n# ==============================================================================\n\n# USECASE: Check if any of the observations would be considered outliers\n\nfit |&gt; check_outliers()\n\nfit |&gt; check_outliers() |&gt; plot()"
   }
 ]
