@@ -13,6 +13,7 @@ about:
     - icon: github
       text: github
       href: https://www.github.com/jmgirard
+toc: false
 ---
 
 ## Experience

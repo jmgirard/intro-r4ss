@@ -3,6 +3,7 @@ title: "Daiil Jun"
 about:
   template: trestles
   image: "../img/Jun_500x500.jpg"
+toc: false
 ---
 
 ## Education
