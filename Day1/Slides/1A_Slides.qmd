@@ -794,4 +794,14 @@ round(2 / 3, digits = 3)
 round(2 / 3) # the default value for digits is 0
 
 round(2 / 3, digits = 0)
+
+# ==============================================================================
+
+# LESSON: Functions can be "nested" and are evaluated inside-out
+
+sqrt(5)
+
+round(sqrt(5)) # Square root 5 then round the result
+
+sqrt(round(5)) # Round 5 then square root the result
 ```

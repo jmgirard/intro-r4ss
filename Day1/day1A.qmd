@@ -54,7 +54,6 @@ Change the `x` to an asterisk `*` because asterisk `*` is the multiplication ope
 
 </blockquote></details></p>
 
----
 
 ### Question 2
 
@@ -75,7 +74,7 @@ Make your best guesses just by looking at the commands and then check your guess
 
 </details></p>
 
----
+
 
 ### Question 3
 
@@ -112,7 +111,7 @@ round(y, digits = 2)
 
 </blockquote></details></p>
 
----
+
 
 ### Question 4
 

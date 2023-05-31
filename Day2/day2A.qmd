@@ -17,11 +17,18 @@ We resume on Day 2 with a discussion of special data types (for categorical data
 
 [Click here to view the slides in their own window.](./Slides/2A_Slides.html)
 
+## Data Files
+
+- <a href="yearspubs.csv" download="yearspubs.csv">yearspubs</a> (professors' salaries by seniority, publications, etc.)
+- <a href="salaries.csv" download="salaries.csv">salaries</a> (professors' salaries by rank, discipline, etc.)
+- <a href="interpersonal.csv" download="interpersonal.csv">interpersonal</a> (patients' interpersonal problems before and after treatment)
+- <a href="elicitation.csv" download="elicitation.csv">elicitation</a> (participants' emotions elicited during different tasks)
+
 ## Practice
 
 ## Question 1.
 
-a) Download the [yearspubs](#) dataset from the workshop website and read it into R.
+a) Download the `yearspubs` dataset from the link above and read it into R.
 
 b) Estimate the correlation between academics' number of publications (`n_pubs`) and number of citations (`n_cites`) in this sample.
 
@@ -87,7 +94,6 @@ The effect size was $d=-0.31$ but the difference was not significant $(p=.232)$.
 
 </blockquote></details></p>
 
----
 
 ## Question 2
 
@@ -115,7 +121,6 @@ The effect size was $\eta^2=0.45$ and the difference was significant $(p<.001)$.
 
 </blockquote></details></p>
 
----
 
 ## Question 3.
 

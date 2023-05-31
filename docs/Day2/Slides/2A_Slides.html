@@ -776,13 +776,7 @@
 <span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(<span class="at">x =</span> salary, <span class="at">y =</span> rank, <span class="at">data =</span> salaries, <span class="at">geom =</span> <span class="st">"boxplot"</span>)</span>
 <span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(<span class="at">x =</span> salary, <span class="at">y =</span> rank, <span class="at">data =</span> salaries, <span class="at">geom =</span> <span class="st">"violin"</span>)</span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="co"># ==============================================================================</span></span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="co"># USECASE: Visualize the covariation of multiple variables</span></span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(<span class="at">x =</span> yrs.since.phd, <span class="at">y =</span> salary, <span class="at">color =</span> discipline, <span class="at">data =</span> salaries, <span class="at">geom =</span> <span class="st">"point"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(<span class="at">x =</span> salary, <span class="at">y =</span> rank, <span class="at">data =</span> salaries, <span class="at">geom =</span> <span class="st">"violin"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <!-- Correlations -->
 </section></section>
@@ -1275,44 +1269,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

@@ -53,9 +53,7 @@ format:
 :::
 :::
 
-::: footer
-\[3B\] Model II
-:::
+
 
 ## Basic Regression Live Coding
 
@@ -68,11 +66,7 @@ format:
 # SETUP: Load the used packages (if needed) and read in the example dataset
 
 library(tidyverse)
-library(datawizard)
-library(parameters)
-library(performance)
-library(effects)
-library(ggeffects)
+library(easystats)
 
 yearspubs <- read_csv("yearspubs.csv")
 yearspubs
@@ -82,13 +76,13 @@ yearspubs
 # LESSON: Regression is a special case of the linear model, so we use lm()
 
 fit <- lm(
-  formula = salary ~ yrs_since,
+  formula = salary ~ years_since_phd,
   data = yearspubs
 )
 
 # ==============================================================================
 
-# TIP: Get a parameter summary using model_parameters() from {parameters}
+# TIP: Get a parameter summary using model_parameters()
 
 fit
 
@@ -102,35 +96,41 @@ model_parameters(fit, standardize = "refit")
 
 # ==============================================================================
 
-# TIP: Get a performance summary using model_performance() from {performance}
+# TIP: Get a performance summary using model_performance()
 
 model_performance(fit)
 
 # ==============================================================================
 
-# TIP: Visualize the model's predictions using ggeffect() from {ggeffects}
+# TIP: Visualize the model expectations using estimate_expectation()
 
-ggeffect(fit, terms = "yrs_since") |> plot()
+plot(estimate_expectation(fit))
 
 # ==============================================================================
 
-# LESSON: To center the predictor, use mutate() and center() from {datawizard}
+# LESSON: To center the predictor, use center()
 
-yearspubs <- mutate(yearspubs, yrs_since_c = center(yrs_since))
-
+yearspubs$years_c = center(yearspubs$years_since_phd)
+  
 fit_c <- lm(
-  formula = salary ~ yrs_since_c,
+  formula = salary ~ years_c,
   data = yearspubs
 )
 
 model_parameters(fit_c)
 
-# NOTE: Centering will change the intercept in basic regression (not the slope)
+plot(estimate_expectation(fit))
+plot(estimate_expectation(fit_c))
+
+# ==============================================================================
+
+# NOTE: Centering will only change the intercept in basic regression
+
+compare_parameters(fit, fit_c)
+
+compare_performance(fit, fit_c)
 ```
 
-::: footer
-\[3B\] Model II
-:::
 
 ## Multiple Regression {.smaller}
 
@@ -152,9 +152,6 @@ model_parameters(fit_c)
 :::
 :::
 
-::: footer
-\[3B\] Model II
-:::
 
 ## Multiple Regression {.smaller}
 
@@ -181,13 +178,10 @@ model_parameters(fit_c)
 :::
 
 ::: {.column width="45%"}
-![](../img/venn.png)
+![](../../img/venn.png)
 :::
 :::
 
-::: footer
-\[3B\] Model II
-:::
 
 ## Multiple Regression Live Coding
 
@@ -200,51 +194,38 @@ model_parameters(fit_c)
 # SETUP: Load the used packages (if needed) and read in the example dataset
 
 library(tidyverse)
-library(parameters)
-library(performance)
-library(ggeffects)
+library(easystats)
 
-yearspubs <- read_csv("../data/yearspubs.csv")
-yearspubs
+# yearspubs <- read_csv("yearspubs.csv")
+# yearspubs
 
 # ==============================================================================
 
 # LESSON: To add more predictors to the formula, just separate them by +
 
-fit3 <- lm(
-  formula = salary ~ yrs_since + n_pubs,
+fit_yn <- lm(
+  formula = salary ~ years_since_phd + n_pubs,
   data = yearspubs
 )
 
-model_parameters(fit3)
+model_parameters(fit_yn)
 
-model_performance(fit3)
+model_parameters(fit_yn, standardize = "refit")
 
-model_parameters(fit3, standardize = "refit")
-
-# ==============================================================================
-
-# LESSON: Our effect plots are now "marginalized" across the other variable
-
-ggeffect(fit3, terms = "yrs_since") |> plot()
-
-ggeffect(fit3, terms = "n_pubs") |> plot()
+model_performance(fit_yn)
 
 # ==============================================================================
 
 # USECASE: We can compare our models in terms of parameters and performance
 
-fit1 <- lm(salary ~ yrs_since, data = yearspubs)
-fit2 <- lm(salary ~ n_pubs, data = yearspubs)
+fit_y <- lm(salary ~ years_since_phd, data = yearspubs)
+fit_n <- lm(salary ~ n_pubs, data = yearspubs)
 
-compare_parameters(fit1, fit2, fit3)
+compare_parameters(fit_yn, fit_y, fit_n)
 
-compare_performance(fit1, fit2, fit3)
+compare_performance(fit_yn, fit_y, fit_n)
 ```
 
-::: footer
-\[3B\] Model II
-:::
 
 ## Categorical Predictors {.smaller}
 
@@ -271,9 +252,6 @@ compare_performance(fit1, fit2, fit3)
 :::
 :::
 
-::: footer
-\[3B\] Model II
-:::
 
 ## Categorical Live Coding
 
@@ -286,79 +264,68 @@ compare_performance(fit1, fit2, fit3)
 # SETUP: Load the used packages (if needed) and read in the example dataset
 
 library(tidyverse)
-library(parameters)
-library(performance)
-library(ggeffects)
+library(easystats)
 
-salaries <- read_csv("salaries.csv")
-salaries
+# install.packages("palmerpenguins")
+library(palmerpenguins)
 
 # ==============================================================================
 
 # USECASE: Compare three groups with regression (instead of oneway anova)
 
-salaries <- 
-  salaries |> 
-  mutate(
-    rank = factor(
-      rank, 
-      levels = c("Assistant", "Associate", "Full") # put Assistant first
-    )
-  )
+penguins
 
-fit <- lm(salary ~ rank, data = salaries)
+levels(penguins$species)
+
+fit <- lm(body_mass_g ~ species, data = penguins)
 
 model_parameters(fit) # estimate intercept and slopes
+
+estimate_means(fit, at = "species") # estimate means
 
 model_parameters(fit, standardize = "refit") # estimate standardized effects
 
 model_performance(fit) # estimate model performance
 
-ggeffect(fit, terms = "rank") # estimate group means for rank
+plot(estimate_expectation(fit)) # plot model expectations
 
-ggeffect(fit, terms = "rank") |> plot() # plot group means for rank
-
-fit |> aov() |> model_parameters() # recreate ANOVA-style F-test
+anova <- aov(fit) # refit as ANOVA
+model_parameters(anova) # recreate F-test
 
 # ==============================================================================
 
-# USECASE: Change the reference group to the Associate rank
+# USECASE: Compare the three groups from regression
 
-salaries2 <- 
-  salaries |> 
-  mutate(
-    rank = factor(
-      rank, 
-      levels = c("Associate", "Assistant", "Full") # put Associate first
-    )
-  )
+estimate_contrasts(fit, contrast = "species")
 
-fit2 <- lm(salary ~ rank, data = salaries2)
+# ==============================================================================
 
-model_parameters(fit2) # now the intercept is the Associate rank's mean
+# USECASE: Including multiple categorical predictors
 
-ggeffect(fit2, terms = "rank") # these estimates are identical to before
+fit2 <- lm(body_mass_g ~ species + sex, data = penguins)
+
+model_parameters(fit2)
+
+estimate_contrasts(fit2, contrast = "species")
+estimate_contrasts(fit2, contrast = "sex")
+
+plot(estimate_expectation(fit2))
 
 # ==============================================================================
 
 # USECASE: Regression can even mix categorical and continuous predictors!
 
-fit3 <- lm(salary ~ rank + yrs.since.phd, data = salaries)
+fit3 <- lm(body_mass_g ~ flipper_length_mm + species, data = penguins)
 
 model_parameters(fit3)
 
-# NOTE: The intercept is now the mean of Assistant rank with 0 years since PhD
-
-model_parameters(fit3, standardize = "refit")
+model_parameters(fit3, standardize = "refit") 
 
 model_performance(fit3)
 
-ggeffect(fit3, terms = c("yrs.since.phd", "rank")) |> plot()
+plot(estimate_expectation(fit3))
 ```
 
-::: footer
-\[3B\] Model II
-:::
 
 ## Interaction Effects {.smaller}
 
@@ -380,9 +347,6 @@ ggeffect(fit3, terms = c("yrs.since.phd", "rank")) |> plot()
 :::
 :::
 
-::: footer
-\[3B\] Model II
-:::
 
 ## Interactions Live Coding
 
@@ -395,9 +359,7 @@ ggeffect(fit3, terms = c("yrs.since.phd", "rank")) |> plot()
 # SETUP: Load the used packages (if needed) and read in the example dataset
 
 library(tidyverse)
-library(parameters)
-library(performance)
-library(ggeffects)
+library(easystats)
 
 exercise <- read_csv("exercise.csv")
 exercise
@@ -410,8 +372,9 @@ fit1 <- lm(loss ~ hours + sex, data = exercise)
 
 model_parameters(fit1)
 
-ggeffect(fit1, terms = c("hours", "sex")) |> plot()
+plot(estimate_expectation(fit1))
 
+estimate_slopes(fit1, trend = "hours", at = "sex")
 
 # ==============================================================================
 
@@ -421,7 +384,9 @@ fit2 <- lm(loss ~ hours * sex, data = exercise)
 
 model_parameters(fit2)
 
-ggeffect(fit2, terms = c("hours", "sex")) |> plot()
+plot(estimate_expectation(fit2))
+
+estimate_slopes(fit2, trend = "hours", at = "sex")
 
 # ==============================================================================
 
@@ -431,7 +396,7 @@ fit3 <- lm(loss ~ hours + effort, data = exercise)
 
 model_parameters(fit3)
 
-ggeffect(fit3, terms = c("hours", "effort")) |> plot()
+plot(estimate_expectation(fit3))
 
 # NOTE: A model with no interaction will have parallel lines
 
@@ -458,9 +423,6 @@ model_parameters(fit5)
 ggeffect(fit5, terms = c("hours", "effort", "sex")) |> plot()
 ```
 
-::: footer
-\[3B\] Model II
-:::
 
 ## A Formula Resource {.smaller}
 
@@ -548,9 +510,6 @@ Note that predictors can be continuous (i.e., numbers) or categorical (i.e., fac
 :::
 :::
 
-::: footer
-\[3B\] Model II
-:::
 
 ## Regression Diagnostics {.smaller}
 
@@ -572,13 +531,10 @@ Note that predictors can be continuous (i.e., numbers) or categorical (i.e., fac
 :::
 
 ::: {.column .tc .pv5 width="40%"}
-{{< li oamdefle trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+{{< li oamdefle trigger=loop delay=3000 colors=primary:#2a76dd class=rc >}}
 :::
 :::
 
-::: footer
-\[3B\] Model II
-:::
 
 ## Diagnostics Live Coding
 

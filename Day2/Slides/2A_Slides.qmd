@@ -399,12 +399,6 @@ qplot(x = rank, fill = discipline, data = salaries, geom = "bar")
 qplot(x = salary, y = rank, data = salaries, geom = "boxplot")
 
 qplot(x = salary, y = rank, data = salaries, geom = "violin")
-
-# ==============================================================================
-
-# USECASE: Visualize the covariation of multiple variables
-
-qplot(x = yrs.since.phd, y = salary, color = discipline, data = salaries, geom = "point")
 ```
 
 <!-- Correlations -->

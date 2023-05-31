@@ -191,6 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files">Data Files</a></li>
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   <li><a href="#question-1." id="toc-question-1." class="nav-link" data-scroll-target="#question-1.">Question 1.</a></li>
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
@@ -227,13 +228,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </iframe>
 <p><a href="./Slides/2A_Slides.html">Click here to view the slides in their own window.</a></p>
 </section>
+<section id="data-files" class="level2">
+<h2 class="anchored" data-anchor-id="data-files">Data Files</h2>
+<ul>
+<li><a href="yearspubs.csv" download="yearspubs.csv">yearspubs</a> (professors’ salaries by seniority, publications, etc.)</li>
+<li><a href="salaries.csv" download="salaries.csv">salaries</a> (professors’ salaries by rank, discipline, etc.)</li>
+<li><a href="interpersonal.csv" download="interpersonal.csv">interpersonal</a> (patients’ interpersonal problems before and after treatment)</li>
+<li><a href="elicitation.csv" download="elicitation.csv">elicitation</a> (participants’ emotions elicited during different tasks)</li>
+</ul>
+</section>
 <section id="practice" class="level2">
 <h2 class="anchored" data-anchor-id="practice">Practice</h2>
 </section>
 <section id="question-1." class="level2">
 <h2 class="anchored" data-anchor-id="question-1.">Question 1.</h2>
 <ol type="a">
-<li><p>Download the <a href="#">yearspubs</a> dataset from the workshop website and read it into R.</p></li>
+<li><p>Download the <code>yearspubs</code> dataset from the link above and read it into R.</p></li>
 <li><p>Estimate the correlation between academics’ number of publications (<code>n_pubs</code>) and number of citations (<code>n_cites</code>) in this sample.</p></li>
 <li><p>Compare the average number of citations between male and female academics using a Welch t-test. Which group had more and was the difference significant?</p></li>
 <li><p>Estimate the effect size of this difference.</p></li>
@@ -256,14 +266,14 @@ Click here for the answer key
 <div class="cell-output cell-output-stdout">
 <pre><code># Correlation Matrix (pearson-method)
 
-Parameter1 | Parameter2 |    r |       95% CI | t(60) |         p
------------------------------------------------------------------
-yrs_since  |     n_pubs | 0.65 | [0.48, 0.78] |  6.70 | &lt; .001***
-yrs_since  |    n_cites | 0.37 | [0.14, 0.57] |  3.11 | 0.007**  
-yrs_since  |     salary | 0.51 | [0.29, 0.67] |  4.54 | &lt; .001***
-n_pubs     |    n_cites | 0.34 | [0.10, 0.54] |  2.80 | 0.007**  
-n_pubs     |     salary | 0.43 | [0.21, 0.62] |  3.72 | 0.002**  
-n_cites    |     salary | 0.38 | [0.15, 0.58] |  3.19 | 0.007**  
+Parameter1      | Parameter2 |    r |       95% CI | t(60) |         p
+----------------------------------------------------------------------
+years_since_phd |     n_pubs | 0.65 | [0.48, 0.78] |  6.70 | &lt; .001***
+years_since_phd |    n_cites | 0.37 | [0.14, 0.57] |  3.11 | 0.007**  
+years_since_phd |     salary | 0.51 | [0.29, 0.67] |  4.54 | &lt; .001***
+n_pubs          |    n_cites | 0.34 | [0.10, 0.54] |  2.80 | 0.007**  
+n_pubs          |     salary | 0.43 | [0.21, 0.62] |  3.72 | 0.002**  
+n_cites         |     salary | 0.38 | [0.15, 0.58] |  3.19 | 0.007**  
 
 p-value adjustment method: Holm (1979)
 Observations: 62</code></pre>
@@ -339,7 +349,6 @@ Observations: 62</code></pre>
 </blockquote>
 </details>
 <p></p>
-<hr>
 </section>
 <section id="question-2" class="level2">
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
@@ -396,7 +405,6 @@ Click here for the answer key
 </blockquote>
 </details>
 <p></p>
-<hr>
 </section>
 <section id="question-3." class="level2">
 <h2 class="anchored" data-anchor-id="question-3.">Question 3.</h2>

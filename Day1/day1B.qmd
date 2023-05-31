@@ -60,7 +60,6 @@ No, I lost money!
 
 </blockquote></details></p>
 
----
 
 ### Question 2.
 
@@ -113,7 +112,6 @@ tolower(flavors)
 </blockquote>
 </details></p>
 
----
 
 ## Question 3.
 
@@ -135,7 +133,6 @@ praise()
 The function seems to create strings that praise/compliment the user.
 </blockquote></details></p>
 
----
 
 ## Question 4.
 
