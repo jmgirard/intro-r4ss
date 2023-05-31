@@ -51,7 +51,7 @@
 }
 
 .instructions pre code {
-  background-color: #F4F4F4;
+  background-color: #f0f2f4;
   min-height: 500px !important;
   max-height: 500px !important;
 }
@@ -71,13 +71,13 @@
 /* Style for inline code */
 .reveal p code, .reveal li code, .reveal td code {
   padding: 2px 9px;
-  background-color: #303030;
+  background-color: #f0f2f4;
   border-radius: 4px;
 }
 
 /* Style for code chunk */
 .reveal pre.sourceCode code {
-  background-color: #303030;
+  background-color: #f0f2f4;
   padding: 6px 9px;
   min-height: 550px;
   max-height: 550px;
