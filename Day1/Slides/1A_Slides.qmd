@@ -219,31 +219,6 @@ format:
 :::
 
 
-## Common Data Science Languages {.smaller}
-
-#### General Purpose
-
-- [R]{.b .blue} (interactive, welcoming)
-    - *Strengths:* statistics, data wrangling, data visualization
-    - *Weaknesses:* relatively slow, not security-focused
-
-::: {.fragment}
-- [Python]{.b .blue} (popular, versatile)
-    - *Strengths:* automation, machine learning, data wrangling
-    - *Weaknesses:* relatively slow
-:::  
-  
-::: {.fragment}
-- [Java]{.b .green} / [C++]{.b .green} / [Scala]{.b .green} / [Julia]{.b .green} (faster but older and harder or newer and smaller)
-:::
-
-::: {.fragment}
-#### Special Purpose
-
-- JavaScript (web), SQL (databases), Swift (mobile), MATLAB (neuroscience), etc.
-:::
-
-
 ## The R Ecosystem {.smaller}
 
 ::: {.columns .pv4}
@@ -473,6 +448,7 @@ format:
 9 876 543 # error
 ```
 
+
 ## Scripts Live Coding
 
 ```{r}
@@ -541,6 +517,68 @@ format:
 ## You will now have a .R file that you can keep and/or transfer
 ## Only the code/input is saved in the script, not the results/output
 ```
+
+## Projects {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   [Projects]{.b .blue} are [special folders]{.b .green} on your computer
+    -   They contain all files related to a task
+    -   They keep everything together and organized
+
+::: {.fragment .mt1}
+-   Projects make it easy to [find and use your files]{.b .green}
+    -   No need to specify long, annoying file paths
+    -   No need to worry about working directories
+:::
+
+::: {.fragment .mt1}
+-   Projects make it easy to [switch between tasks]{.b .green}
+    -   They will remember exactly where you left off
+    -   You can even open multiple projects at once
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li jzzxeaju trigger=loop delay=5000 colors=secondary:#2a76dd class=rc >}}
+:::
+:::
+
+::: {.aside}
+*Note.* Save your project in a cloud service folder (e.g., Box, Dropbox, Google Drive, OneDrive) to backup and sync it.
+:::
+
+
+## Projects Live Coding
+
+::: {.instructions}
+    # Create a new Project
+    - Open the "File" menu in RStudio
+    - Select the "New Project..." option
+    - Select the "New Directory" option
+    - Select the "New Project" option
+    - Name the directory "Intro R" or "R4SS" (or whatever)
+    - Browse to where to create your Project folder
+
+    # Create a new File
+    - Explore the Files tab in the Extras pane
+    - Create a New File (e.g., a script) as an example
+    - RStudio will automatically create it in your project folder
+    - Add some text to the example file (e.g., "# Hello World")
+    - Save the file and note that it defaults to your project folder
+    - Close the script with the "x" icon
+    - Reopen the script from the Files tab
+
+    # Close and Open Project
+    - Open the "File" menu in RStudio
+    - Select the "Close Project" option
+    - Notice that your work is now gone
+    - Open the "File" menu in RStudio
+    - Select the "Open Project" option
+    - Browse to your project folder
+    - Open the .Rproj file (e.g., R4SS.Rproj)
+    - Notice that your work is now back!
+:::
 
 <!-- Assignment -->
 

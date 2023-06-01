@@ -1097,7 +1097,7 @@ library(tidyverse)
 
 # ==============================================================================
 
-# USECASE: Create a tibble and write it to a file
+# USECASE: Create a tibble and write it to a file in your project folder
 
 gradebook <- tibble(
   id = c(123, 456, 789),
