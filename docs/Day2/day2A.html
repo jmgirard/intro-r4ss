@@ -232,9 +232,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="data-files">Data Files</h2>
 <ul>
 <li><a href="yearspubs.csv" download="yearspubs.csv">yearspubs</a> (professors’ salaries by seniority, publications, etc.)</li>
-<li><a href="salaries.csv" download="salaries.csv">salaries</a> (professors’ salaries by rank, discipline, etc.)</li>
 <li><a href="interpersonal.csv" download="interpersonal.csv">interpersonal</a> (patients’ interpersonal problems before and after treatment)</li>
 <li><a href="elicitation.csv" download="elicitation.csv">elicitation</a> (participants’ emotions elicited during different tasks)</li>
+<li><a href="affairs.csv" download="affairs.csv">affairs</a> (participants’ marital characteristics including number of extramarital affairs)</li>
 </ul>
 </section>
 <section id="practice" class="level2">
@@ -245,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="a">
 <li><p>Download the <code>yearspubs</code> dataset from the link above and read it into R.</p></li>
 <li><p>Estimate the correlation between academics’ number of publications (<code>n_pubs</code>) and number of citations (<code>n_cites</code>) in this sample.</p></li>
-<li><p>Compare the average number of citations between male and female academics using a Welch t-test. Which group had more and was the difference significant?</p></li>
+<li><p>Compare the average number of citations between male and female academics using a <span class="math inline">\(t\)</span>-test. Which group had more and was the difference significant?</p></li>
 <li><p>Estimate the effect size of this difference.</p></li>
 </ol>
 <p>
@@ -289,10 +289,6 @@ Observations: 62</code></pre>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">model_parameters</span>(results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Unable to retrieve data from htest object.
-  Returning an approximate effect size using t_to_d().</code></pre>
-</div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <caption>Welch Two Sample t-test</caption>
@@ -360,8 +356,8 @@ Click here for the answer key
 </summary>
 <blockquote class="blockquote">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="at">formula =</span> cty <span class="sc">~</span> drv, <span class="at">data =</span> mpg)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">model_parameters</span>(results, <span class="at">effectsize_type =</span> <span class="st">"eta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="at">formula =</span> cty <span class="sc">~</span> drv, <span class="at">data =</span> mpg)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">model_parameters</span>(results, <span class="at">effectsize_type =</span> <span class="st">"eta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -408,7 +404,7 @@ Click here for the answer key
 </section>
 <section id="question-3." class="level2">
 <h2 class="anchored" data-anchor-id="question-3.">Question 3.</h2>
-<p>Did you bring your own data? If so, load it into R and explore it using the tools we learned this week. Wrangle it a bit and maybe do some basic statistics on it, estimating correlations and comparing group means.</p>
+<p>Did you bring your own data? If so, load it into R and explore it using the tools we learned this week. Wrangle it a bit and maybe do some basic statistics on it, estimating correlations and comparing group means. If you didn’t, download the <code>affairs</code> dataset (linked above) and do some exploration and statistics on it.</p>
 </section>
 <section id="readings" class="level2">
 <h2 class="anchored" data-anchor-id="readings">Readings</h2>

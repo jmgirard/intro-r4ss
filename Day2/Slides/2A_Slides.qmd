@@ -284,6 +284,8 @@ range(cereal3$rating, na.rm = TRUE)
 library(tidyverse)
 library(easystats)
 
+
+
 # ==============================================================================
 
 # SETUP: We will use the salaries data and configure its factors
@@ -442,19 +444,19 @@ qplot(x = salary, y = rank, data = salaries, geom = "violin")
 library(tidyverse)
 library(easystats)
 
-salaries <- read_csv("salaries.csv")
+yearspubs <- read_csv("yearspubs.csv")
 
 # ==============================================================================
 
 # LESSON: The standard correlation test in R
 
-cor.test(salaries$salary, salaries$yrs.since.phd)
+cor.test(yearspubs$salary, salaries$years_since_phd)
 
 # ==============================================================================
 
 # TIP: Fancier correlations with the {easystats} package
 
-results <- correlation(salaries)
+results <- correlation(yearspubs)
 results
 
 # ==============================================================================
@@ -469,21 +471,21 @@ plot(summary(results))
 
 # p-value adjustments
 
-correlation(salaries, p_adjust = "none") # very liberal
+correlation(yearspubs, p_adjust = "none") # very liberal
 
-correlation(salaries, p_adjust = "bonferroni") # very conservative
+correlation(yearspubs, p_adjust = "bonferroni") # very conservative
 
-correlation(salaries, p_adjust = "holm") # recommended
+correlation(yearspubs, p_adjust = "holm") # recommended
 
 # ==============================================================================
 
 # LESSON: Other correlation methods
 
-correlation(salaries, method = "spearman") # ranks (easier interpretation)
+correlation(yearspubs, method = "spearman") # ranks (easier interpretation)
 
-correlation(salaries, method = "kendall") # ranks (more robust and efficient)
+correlation(yearspubs, method = "kendall") # ranks (more robust and efficient)
 
-correlation(salaries, method = "distance") # linear and nonlinear relationships
+correlation(yearspubs, method = "distance") # linear and nonlinear relationships
 ```
 
 <!-- Comparing Groups -->
@@ -529,18 +531,17 @@ library(easystats)
 
 ## Independent Groups Example
 
-salaries <- read_csv("salaries.csv")
-salaries
+yearspubs
 
 ### Exploratory Analysis
 
-qplot(x = salary, y = discipline, data = salaries, geom = "boxplot")
+qplot(x = salary, y = sex, data = yearspubs, geom = "boxplot")
 
 ### Parametric Test: Welch's Two Sample t-test
 
 results <- t.test(
-  formula = salary ~ discipline,
-  data = salaries
+  formula = salary ~ sex,
+  data = yearspubs
 )
 model_parameters(results, effectsize_type = "d")
 
@@ -608,31 +609,30 @@ model_parameters(results3, effectsize_type = "d")
 
 library(tidyverse)
 library(easystats)
-
+library(palmerpenguins)
 
 ## Independent Groups Example
 
-salaries <- read_csv("salaries2.csv")
-salaries
+penguins
 
 ### Exploratory Analysis
 
-qplot(x = salary, y = rank, data = salaries, geom = "boxplot")
+qplot(x = body_mass_g, y = species, data = penguins, geom = "boxplot")
 
 ### Parametric Test: One-Way Analysis of Variance
 
 omnibus <- aov(
-  formula = salary ~ rank,
-  data = salaries
+  formula = body_mass_g ~ species,
+  data = penguins
 )
 model_parameters(omnibus, effectsize_type = "eta")
 
 
-em <- estimate_means(omnibus, at = "rank")
+em <- estimate_means(omnibus, at = "species")
 em
 plot(em)
 
-estimate_contrasts(omnibus, contrast = "rank")
+estimate_contrasts(omnibus, contrast = "species")
 
 
 ### Nonparametric Alternative: Kruskal-Wallis Rank Sum Test

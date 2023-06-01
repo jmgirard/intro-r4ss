@@ -20,9 +20,9 @@ We resume on Day 2 with a discussion of special data types (for categorical data
 ## Data Files
 
 - <a href="yearspubs.csv" download="yearspubs.csv">yearspubs</a> (professors' salaries by seniority, publications, etc.)
-- <a href="salaries.csv" download="salaries.csv">salaries</a> (professors' salaries by rank, discipline, etc.)
 - <a href="interpersonal.csv" download="interpersonal.csv">interpersonal</a> (patients' interpersonal problems before and after treatment)
 - <a href="elicitation.csv" download="elicitation.csv">elicitation</a> (participants' emotions elicited during different tasks)
+- <a href="affairs.csv" download="affairs.csv">affairs</a> (participants' marital characteristics including number of extramarital affairs)
 
 ## Practice
 
@@ -32,7 +32,7 @@ a) Download the `yearspubs` dataset from the link above and read it into R.
 
 b) Estimate the correlation between academics' number of publications (`n_pubs`) and number of citations (`n_cites`) in this sample.
 
-c) Compare the average number of citations between male and female academics using a Welch t-test. Which group had more and was the difference significant?
+c) Compare the average number of citations between male and female academics using a $t$-test. Which group had more and was the difference significant?
 
 d) Estimate the effect size of this difference.
 
@@ -78,6 +78,7 @@ model_parameters(results)
 
 ```{r}
 #| echo: false
+#| warning: false
 
 results <- t.test(
   formula = n_cites ~ sex,
@@ -124,7 +125,7 @@ The effect size was $\eta^2=0.45$ and the difference was significant $(p<.001)$.
 
 ## Question 3.
 
-Did you bring your own data? If so, load it into R and explore it using the tools we learned this week. Wrangle it a bit and maybe do some basic statistics on it, estimating correlations and comparing group means.
+Did you bring your own data? If so, load it into R and explore it using the tools we learned this week. Wrangle it a bit and maybe do some basic statistics on it, estimating correlations and comparing group means. If you didn't, download the `affairs` dataset (linked above) and do some exploration and statistics on it.
 
 ## Readings
 
