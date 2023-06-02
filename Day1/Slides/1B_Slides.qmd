@@ -29,8 +29,6 @@ format:
 ![](../../img/proud_coder_2780E3.svg){.absolute bottom=0 right=0 width=400}
 :::
 
-# Vectors
-
 ## Vectors {.smaller}
 
 ::: {.columns .pv4}
@@ -122,8 +120,6 @@ mean(x)
 average(x) # error
 ```
 
-# Strings
-
 ## Strings {.smaller}
 
 ::: {.columns .pv4}
@@ -197,8 +193,6 @@ nchar(dyes)
 dyes2 <- toupper(dyes)
 dyes2
 ```
-
-# Packages
 
 ## Packages {.smaller}
 
@@ -286,8 +280,6 @@ browseVignettes("tidyverse")
 install.packages("easystats")
 ```
 
-
-# Principles
 
 ## Tidy Data Principles {.smaller}
 
@@ -912,8 +904,6 @@ install.packages("easystats")
 :::
 
 
-# Tibbles
-
 ## Tibbles {.smaller}
 
 ::: {.columns .pv4}
@@ -1052,9 +1042,6 @@ dim(gradebook)
 
 colnames(gradebook)
 ```
-
-
-# Data Files
 
 ## Data Files {.smaller}
 
