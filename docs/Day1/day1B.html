@@ -189,13 +189,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a>
-  <ul class="collapse">
-  <li><a href="#question-1." id="toc-question-1." class="nav-link" data-scroll-target="#question-1.">Question 1.</a></li>
-  <li><a href="#question-2." id="toc-question-2." class="nav-link" data-scroll-target="#question-2.">Question 2.</a></li>
-  </ul></li>
-  <li><a href="#question-3." id="toc-question-3." class="nav-link" data-scroll-target="#question-3.">Question 3.</a></li>
-  <li><a href="#question-4." id="toc-question-4." class="nav-link" data-scroll-target="#question-4.">Question 4.</a></li>
+  <li><a href="#practice-1" id="toc-practice-1" class="nav-link" data-scroll-target="#practice-1">Practice 1</a></li>
+  <li><a href="#practice-2" id="toc-practice-2" class="nav-link" data-scroll-target="#practice-2">Practice 2</a></li>
+  <li><a href="#practice-3" id="toc-practice-3" class="nav-link" data-scroll-target="#practice-3">Practice 3</a></li>
+  <li><a href="#practice-4" id="toc-practice-4" class="nav-link" data-scroll-target="#practice-4">Practice 4</a></li>
   <li><a href="#readings" id="toc-readings" class="nav-link" data-scroll-target="#readings">Readings</a></li>
   <li><a href="#fun-stuff" id="toc-fun-stuff" class="nav-link" data-scroll-target="#fun-stuff">Fun Stuff</a>
   <ul class="collapse">
@@ -233,10 +230,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </iframe>
 <p><a href="./Slides/1B_Slides.html">Click here to view the slides in their own window.</a></p>
 </section>
-<section id="practice" class="level2">
-<h2 class="anchored" data-anchor-id="practice">Practice</h2>
-<section id="question-1." class="level3">
-<h3 class="anchored" data-anchor-id="question-1.">Question 1.</h3>
+<section id="practice-1" class="level2">
+<h2 class="anchored" data-anchor-id="practice-1">Practice 1</h2>
 <p>Imagine that you ran a stand selling bananas for three days. On the first day, you sold $30 worth of bananas and spent $15 on supplies. On the second day, you sold $50 worth of bananas and spent $15 on supplies. On the third day, you sold $40 worth of bananas and spent $100 on repairs to the stand (due to an unfortunate fire).</p>
 <ol type="a">
 <li><p>Create two vectors named <code>sales</code> and <code>costs</code> to store how much you sold and how much you spent on each day, respectively.</p></li>
@@ -270,8 +265,8 @@ Click here for the answer key
 </details>
 <p></p>
 </section>
-<section id="question-2." class="level3">
-<h3 class="anchored" data-anchor-id="question-2.">Question 2.</h3>
+<section id="practice-2" class="level2">
+<h2 class="anchored" data-anchor-id="practice-2">Practice 2</h2>
 <ol type="a">
 <li>Create a character vector named <code>flavors</code> that contains the following strings and print it:
 <ul>
@@ -316,9 +311,8 @@ Click here for the answer key
 </details>
 <p></p>
 </section>
-</section>
-<section id="question-3." class="level2">
-<h2 class="anchored" data-anchor-id="question-3.">Question 3.</h2>
+<section id="practice-3" class="level2">
+<h2 class="anchored" data-anchor-id="practice-3">Practice 3</h2>
 <p>Install the <code>praise</code> package. Then load the installed package in your Quarto document and experiment with the <code>praise()</code> function by running it several times with no arguments. What does the function seem to do?</p>
 <p>
 </p><details>
@@ -331,17 +325,17 @@ Click here for the answer key
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("praise")</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(praise)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">praise</span>()</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "You are bedazzling!"</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "You are magnificent!"</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">praise</span>()</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "You are cool!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "You are impressive!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 The function seems to create strings that praise/compliment the user.
 </blockquote>
 </details>
 <p></p>
 </section>
-<section id="question-4." class="level2">
-<h2 class="anchored" data-anchor-id="question-4.">Question 4.</h2>
+<section id="practice-4" class="level2">
+<h2 class="anchored" data-anchor-id="practice-4">Practice 4</h2>
 <p>The following table summarizes the season information for the eight seasons of AMC’s <em>Breaking Bad</em> show.</p>
 <ol type="a">
 <li><p>Tidy up this data and save it to a tibble. Decide for yourself how to handle season 5 (should it be a single observation or two?). For the first and last aired dates, just store the year as a number.</p></li>

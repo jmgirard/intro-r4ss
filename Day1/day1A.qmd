@@ -17,9 +17,7 @@ We begin with an overview of the workshop, an introduction to R and RStudio, and
 
 [Click here to view the slides in their own window.](./Slides/1A_Slides.html)
 
-## Practice
-
-### Question 1.
+## Practice 1
 
 Read what the user wanted to do and look at the command they sent to R. Fix the errors in the commands and calculate the answers.
 
@@ -55,7 +53,7 @@ Change the `x` to an asterisk `*` because asterisk `*` is the multiplication ope
 </blockquote></details></p>
 
 
-### Question 2
+## Practice 2
 
 Which of the following commands do you think will create an error in R? Why?
 
@@ -76,7 +74,7 @@ Make your best guesses just by looking at the commands and then check your guess
 
 
 
-### Question 3
+## Practice 3
 
 a) Use the `cos()` function to calculate the cosine of 3 and assign it to a variable called `y`. Print the value of `y` to the console. 
 b) Use a function to round `y` to the nearest whole number.
@@ -113,7 +111,7 @@ round(y, digits = 2)
 
 
 
-### Question 4
+## Practice 4
 
 What do you expect the result to be for the following commands?
 
