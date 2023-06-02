@@ -54,7 +54,6 @@ format:
 :::
 
 
-
 ## Basic Regression Live Coding
 
 ```{r}
@@ -102,25 +101,25 @@ model_performance(fit)
 
 # ==============================================================================
 
-# TIP: Visualize the model expectations using estimate_expectation()
+# TIP: Visualize the model expectations using estimate_relation()
 
-plot(estimate_expectation(fit))
+plot(estimate_relation(fit))
 
 # ==============================================================================
 
 # LESSON: To center the predictor, use center()
 
-yearspubs$years_c = center(yearspubs$years_since_phd)
+yearspubs$years_since_phd = center(yearspubs$years_since_phd)
   
 fit_c <- lm(
-  formula = salary ~ years_c,
+  formula = salary ~ years_since_phd,
   data = yearspubs
 )
 
 model_parameters(fit_c)
 
-plot(estimate_expectation(fit))
-plot(estimate_expectation(fit_c))
+plot(estimate_relation(fit))
+plot(estimate_relation(fit_c))
 
 # ==============================================================================
 
@@ -196,8 +195,7 @@ compare_performance(fit, fit_c)
 library(tidyverse)
 library(easystats)
 
-# yearspubs <- read_csv("yearspubs.csv")
-# yearspubs
+yearspubs
 
 # ==============================================================================
 
@@ -265,8 +263,6 @@ compare_performance(fit_yn, fit_y, fit_n)
 
 library(tidyverse)
 library(easystats)
-
-# install.packages("palmerpenguins")
 library(palmerpenguins)
 
 # ==============================================================================
@@ -287,7 +283,7 @@ model_parameters(fit, standardize = "refit") # estimate standardized effects
 
 model_performance(fit) # estimate model performance
 
-plot(estimate_expectation(fit)) # plot model expectations
+plot(estimate_relation(fit)) # plot model predictions
 
 anova <- aov(fit) # refit as ANOVA
 model_parameters(anova) # recreate F-test
@@ -309,7 +305,7 @@ model_parameters(fit2)
 estimate_contrasts(fit2, contrast = "species")
 estimate_contrasts(fit2, contrast = "sex")
 
-plot(estimate_expectation(fit2))
+plot(estimate_relation(fit2))
 
 # ==============================================================================
 
@@ -323,7 +319,7 @@ model_parameters(fit3, standardize = "refit")
 
 model_performance(fit3)
 
-plot(estimate_expectation(fit3))
+plot(estimate_relation(fit3))
 ```
 
 
@@ -372,9 +368,7 @@ fit1 <- lm(loss ~ hours + sex, data = exercise)
 
 model_parameters(fit1)
 
-plot(estimate_expectation(fit1))
-
-estimate_slopes(fit1, trend = "hours", at = "sex")
+plot(estimate_relation(fit1))
 
 # ==============================================================================
 
@@ -384,9 +378,7 @@ fit2 <- lm(loss ~ hours * sex, data = exercise)
 
 model_parameters(fit2)
 
-plot(estimate_expectation(fit2))
-
-estimate_slopes(fit2, trend = "hours", at = "sex")
+plot(estimate_relation(fit2))
 
 # ==============================================================================
 
@@ -396,7 +388,7 @@ fit3 <- lm(loss ~ hours + effort, data = exercise)
 
 model_parameters(fit3)
 
-plot(estimate_expectation(fit3))
+plot(estimate_relation(fit3))
 
 # NOTE: A model with no interaction will have parallel lines
 
@@ -408,9 +400,21 @@ fit4 <- lm(loss ~ hours * effort, data = exercise)
 
 model_parameters(fit4)
 
-ggeffect(fit4, terms = c("hours", "effort")) |> plot() # put hours on x-axis
+plot(estimate_relation(fit4))
 
-ggeffect(fit4, terms = c("effort", "hours")) |> plot() # put effort on x-axis
+slopes <- estimate_slopes(fit4, trend = "hours", at = "effort")
+slopes
+plot(slopes)
+
+# TIP: Increase length to estimate more slopes and fill in gaps in the plot
+
+slopes <- estimate_slopes(fit4, trend = "hours", at = "effort", length = 300)
+plot(slopes)
+
+# TIP: Swap trend and at to see the reverse
+
+slopes <- estimate_slopes(fit4, trend = "effort", at = "hours", length = 300)
+plot(slopes)
 
 # ==============================================================================
 
@@ -420,7 +424,7 @@ fit5 <- lm(loss ~ hours * effort * sex, data = exercise)
 
 model_parameters(fit5)
 
-ggeffect(fit5, terms = c("hours", "effort", "sex")) |> plot()
+plot(estimate_relation(fit5))
 ```
 
 
@@ -544,44 +548,225 @@ Note that predictors can be continuous (i.e., numbers) or categorical (i.e., fac
 #| error: true
 #| code-line-numbers: false
 
+yearspubs
 
-fit <- lm(salary ~ yrs.since.phd + yrs.service, data = salaries)
-
-# ==============================================================================
-
-# USECASE: Check if the residuals appear normally distributed
-
-fit |> check_normality()
-
-fit |> check_normality() |> plot()
+fit <- lm(salary ~ years_since_phd + n_pubs, data = yearspubs)
 
 # ==============================================================================
 
-# USECASE: Check if the residuals show heteroscedasticity (constant variance)
+# USECASE: Check model diagnostics
 
-fit |> check_heteroscedasticity()
+check_model(fit)
 
-fit |> check_heteroscedasticity() |> plot()
-
-# ==============================================================================
-
-# USECASE: Check if the model's predictions match the observed distribution
-
-fit |> check_predictions()
+# TIP: Since this is a big figure, it may be helpful to click the "Zoom" button
 
 # ==============================================================================
 
-# USECASE: Check if any of the predictors show collinearity with others
+# EXPERIMENTAL: Still being developed, but very cool
 
-fit |> check_collinearity()
-
-fit |> check_collinearity() |> plot()
-
-# ==============================================================================
-
-# USECASE: Check if any of the observations would be considered outliers
-
-fit |> check_outliers()
-
-fit |> check_outliers() |> plot()
+# install.packages(c("DT", "flexdashboard"))
+model_dashboard(fit)
 ```
+
+## Addressing Violations
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: true
+#| code-line-numbers: false
+
+# ==============================================================================
+
+# LESSON: Bootstrapping to address non-normal residuals
+
+fit <- lm(n_pubs ~ years_since_phd, data = yearspubs)
+
+model_parameters(fit)
+
+plot(check_normality(fit))
+
+# install.packages("qqplotr")
+plot(check_normality(fit), type = "qq")
+
+model_parameters(fit, bootstrap = TRUE)
+
+# ==============================================================================
+
+# LESSON: Robust standard errors for heteroskedasticity
+
+# Simulate some data is has increasing error variance
+
+set.seed(2023)
+simdata <- tibble(
+  income = runif(n = 60, min = 0, max = 100),
+  rent = abs(5 + (3 * income + rnorm(n = 60, mean = 0, sd = income)) / 5)
+)
+
+qplot(x = income, y = rent, data = simdata, geom = "point")
+
+# Fit linear model
+
+fit2 <- lm(rent ~ 1 + income, data = simdata)
+
+# Estimate normal SEs (assuming constant error variance)
+
+model_parameters(fit2)
+
+plot(check_heteroskedasticity(fit2))
+
+# Estimate heteroskedasticity-robust SEs
+
+# install.packages("sandwich")
+model_parameters(fit2, vcov = "HC3")
+
+# ==============================================================================
+
+# LESSON: Polynomial regression for non-linear functional form
+
+# Simulate some data that is quadratic (not linear)
+
+set.seed(2023)
+simdata <- tibble(
+  cost = runif(n = 50, min = 100, max = 120),
+  x = cost - 112,
+  satisfaction = 10 + 2 * x - 1 * x^2 + rnorm(n = 50, m = 0, sd = 15)
+)
+
+# Fit a linear model anyway
+
+fit3a <- lm(satisfaction ~ cost, data = simdata)
+
+model_parameters(fit3a)
+
+check_model(fit3a)
+
+plot(estimate_relation(fit3a))
+
+# Now fit a polynomial model
+
+fit3b <- lm(satisfaction ~ poly(cost, degree = 2), data = simdata)
+
+model_parameters(fit3b)
+
+check_model(fit3b)
+
+er <- estimate_relation(fit3b, length = 300)
+plot(er)
+
+# Find where the inflection point is (in terms of the x-variable)
+
+describe_nonlinear(er, x = "cost")
+```
+
+## Simple Power Analysis {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   [Power]{.b .green} is the probability of [correctly rejecting]{.b .blue} the null hypothesis (given that that null is wrong)
+    -   Power is related to the effect size, $n$, and $\alpha$
+    -   If we know three, we can estimate the fourth
+    -   *What sample size is needed for 80% power to detect an effect of the expected size or larger?*
+
+::: {.fragment .mt1}
+-   What [effect sizes]{.b .green} should we expect?
+    -   Ideally base the size on previous studies...
+    -   Cohen's $d$ for $t$-tests (e.g., 0.20, 0.50, 0.80)
+    -   Cohen's $f$ for ANOVAs (e.g., 0.10, 0.25, 0.40)
+    -   Cohen's $f^2$ for regression (e.g., 0.02, 0.15, 0.35)
+:::
+
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li htqwuudr trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+:::
+:::
+
+## Power Analysis Live Coding
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: true
+#| code-line-numbers: false
+
+# install.packages("WebPower")
+library(WebPower)
+
+# ==============================================================================
+
+# t-tests
+
+## We want 80% power to detect a difference of d = 0.5 between 2 ind. groups
+
+wp.t(
+  power = 0.80,
+  alpha = 0.05,
+  type = "two.sample",
+  d = 0.5 # effect size
+)
+
+## We want 80% power to detect a difference of d = 0.5 between 2 dep. groups
+
+wp.t(
+  power = 0.80,
+  alpha = 0.05,
+  type = "paired",
+  d = 0.5 # effect size
+)
+
+# ==============================================================================
+
+# ANOVAs
+
+## We want 80% power to detect a difference of f = 0.25 between 4 ind. groups
+
+wp.anova(
+  power = 0.80,
+  alpha = 0.05,
+  type = "overall",
+  k = 4, # number of groups to compare
+  f = 0.25 # effect size
+)
+
+# ==============================================================================
+
+# Regression: Omnibus (overall F-test)
+
+## We want 80% power to explain 10% of the variance in y with 5 predictors
+
+r2_full <- 0.10
+r2_reduced <- 0
+f2 <- (r2_full - r2_reduced) / (1 - r2_full)
+f2
+
+wp.regression(
+  power = 0.80,
+  alpha = 0.05,
+  p1 = 5, # number of predictors in full model
+  p2 = 0, # number of predictors in reduced model
+  f2 = f2 # effect size
+)
+
+# ==============================================================================
+
+# Regression: Targeted (slope's t-test)
+
+## Imagine we can explain 10% of the variance in y using x1 and x2
+## We want 80% power to detect an effect of x3 that explains an additional 5%
+
+r2_full <- 0.15
+r2_reduced <- 0.10
+f2 <- (r2_full - r2_reduced) / (1 - r2_full)
+f2
+
+wp.regression(
+  power = 0.80,
+  alpha = 0.05,
+  p1 = 3, # number of predictors in full model
+  p2 = 2, # number of predictors in reduced model
+  f2 = f2 # effect size
+)
+```
+

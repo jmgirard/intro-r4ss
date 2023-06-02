@@ -29,10 +29,6 @@ format:
 ![](../../img/proud_coder_2780E3.svg){.absolute bottom=0 right=0 width=400}
 :::
 
-<!-- Overview -->
-
-# Overview
-
 ## Instructor {.smaller}
 
 ::: {.columns .pv4}
@@ -219,35 +215,6 @@ format:
 :::
 
 
-## The R Ecosystem {.smaller}
-
-::: {.columns .pv4}
-::: {.column width="60%"}
-1.  Think of your [computer]{.b .blue} as the [engine]{.b .green} of a car
-    -   It provides raw power for computation
-
-::: {.fragment .mt1}
-2.  The [R language]{.b .blue} is like the [controls]{.b .green} for the car
-    -   It lets you apply and direct that power
-:::
-
-::: {.fragment .mt1}
-3.  [RStudio]{.b .blue} is like a fancy [dashboard]{.b .green} for the car
-    -   It adds extra information and convenience
-:::
-
-::: {.fragment .mt1}
-4.  An [R package]{.b .blue} is like an [add-on]{.b .green} for the car
-    -   It adds new features and capabilities
-:::
-:::
-
-::: {.column .tc .pv5 .relative width="40%"}
-{{< li zvoyghpz trigger=loop delay=5000 colors=secondary:#2a76dd class=rc >}}
-:::
-:::
-
-
 ## Installing R {.smaller}
 
 ::: {.columns .pv4}
@@ -324,11 +291,6 @@ format:
 ::: aside
 *Note.* You can customize RStudio (e.g., the fonts, color themes, and pane layout) under "Tools \> Global Options".
 :::
-
-
-<!-- Console and Math -->
-
-# Console and Math
 
 ## R will Grant your Wishes {.smaller}
 
@@ -580,10 +542,6 @@ format:
     - Notice that your work is now back!
 :::
 
-<!-- Assignment -->
-
-# Assignment
-
 ## Assignment {.smaller}
 
 ::: {.columns .pv4}
@@ -667,10 +625,6 @@ y
 y / x
 ```
 
-<!-- Naming -->
-
-# Naming
-
 ## Naming {.smaller}
 
 ::: {.columns .pv4}
@@ -752,9 +706,6 @@ heart_rate # still 93
 Heart_rate # a new object
 ```
 
-<!-- Functions -->
-
-# Functions
 
 ## Functions {.smaller}
 

@@ -24,9 +24,7 @@ We resume on Day 2 with a discussion of special data types (for categorical data
 - <a href="elicitation.csv" download="elicitation.csv">elicitation</a> (participants' emotions elicited during different tasks)
 - <a href="affairs.csv" download="affairs.csv">affairs</a> (participants' marital characteristics including number of extramarital affairs)
 
-## Practice
-
-## Question 1.
+## Practice 1.
 
 a) Download the `yearspubs` dataset from the link above and read it into R.
 
@@ -96,7 +94,7 @@ The effect size was $d=-0.31$ but the difference was not significant $(p=.232)$.
 </blockquote></details></p>
 
 
-## Question 2
+## Practice 2
 
 Using the `mpg` tibble from the \{tidyverse\} package, statistically test whether cars with the three different drive trains (`drv`) get significantly different city fuel efficiency (`cty`) on average. Calculate the effect size for this difference.
 
@@ -123,7 +121,7 @@ The effect size was $\eta^2=0.45$ and the difference was significant $(p<.001)$.
 </blockquote></details></p>
 
 
-## Question 3.
+## Practice 3.
 
 Did you bring your own data? If so, load it into R and explore it using the tools we learned this week. Wrangle it a bit and maybe do some basic statistics on it, estimating correlations and comparing group means. If you didn't, download the `affairs` dataset (linked above) and do some exploration and statistics on it.
 
